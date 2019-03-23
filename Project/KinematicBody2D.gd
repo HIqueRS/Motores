@@ -4,6 +4,8 @@ export (int) var maxspeed = 200;
 
 var velocity = Vector2(); 
 
+
+
 func get_input():
 	velocity = Vector2();
 	if Input.is_action_pressed('down'):
