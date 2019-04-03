@@ -3,34 +3,53 @@
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://troll.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.414, 43.2914 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 116.963, 13.5516 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 242.128, 198.458 )
+position = Vector2( 315.128, 212.458 )
 collision_layer = 65
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="Sprite" parent="Player"]
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 3.32413, 3.3241 )
-shape = SubResource( 4 )
+position = Vector2( 1.43735, 3.70145 )
+shape = SubResource( 1 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Player"]
-position = Vector2( -39, 2 )
-scale = Vector2( 1.22, 35.38 )
+position = Vector2( 37.436, -38.4962 )
+rotation = 1.5708
+scale = Vector2( 1.21, 1 )
 enabled = true
 cast_to = Vector2( 70, 0 )
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="Player"]
+position = Vector2( -33.8388, -38.9509 )
+rotation = 1.5708
+scale = Vector2( 1.21, 1 )
+enabled = true
+cast_to = Vector2( 70, 0 )
+collide_with_areas = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="Player"]
+position = Vector2( -33.5615, -40.6153 )
+enabled = true
+cast_to = Vector2( 70, 0 )
+collide_with_areas = true
+
+[node name="RayCast2D4" type="RayCast2D" parent="Player"]
+position = Vector2( -33.484, 48.3502 )
+enabled = true
+cast_to = Vector2( 70, 0 )
+collide_with_areas = true
 
 [node name="Reset" type="KinematicBody2D" parent="."]
 position = Vector2( 748.274, 187.392 )
@@ -39,7 +58,5 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Reset"]
-shape = SubResource( 5 )
-
-[node name="RayCast2D" type="RayCast2D" parent="Reset"]
+shape = SubResource( 2 )
 
