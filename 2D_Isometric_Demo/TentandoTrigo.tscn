@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://troll.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 34.414, 43.2914 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 116.963, 13.5516 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 242.128, 198.458 )
+collision_layer = 65
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 3.32413, 3.3241 )
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+position = Vector2( -39, 2 )
+scale = Vector2( 1.22, 35.38 )
+enabled = true
+cast_to = Vector2( 70, 0 )
+
+[node name="Reset" type="KinematicBody2D" parent="."]
+position = Vector2( 748.274, 187.392 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reset"]
+shape = SubResource( 5 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Reset"]
+
