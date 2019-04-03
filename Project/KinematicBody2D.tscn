@@ -8,8 +8,9 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
+editor/display_folded = true
 position = Vector2( 125.093, 123.247 )
 scale = Vector2( 1.69754, 1.82338 )
 input_pickable = false
