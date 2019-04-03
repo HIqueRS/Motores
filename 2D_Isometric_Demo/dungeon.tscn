@@ -31,8 +31,6 @@ position = Vector2( 368.142, 347.007 )
 editor/display_folded = true
 position = Vector2( 690.317, 138.132 )
 
-[node name="PathFollow2D" parent="walls/Inimigo/Path2D" index="0"]
-position = Vector2( 34.5686, 97.1545 )
 
 
 [editable path="walls/Inimigo"]
