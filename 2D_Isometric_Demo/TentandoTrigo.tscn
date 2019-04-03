@@ -7,7 +7,7 @@
 extents = Vector2( 34.414, 43.2914 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 116.963, 13.5516 )
+extents = Vector2( 43.8882, 26.9827 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -52,7 +52,7 @@ cast_to = Vector2( 70, 0 )
 collide_with_areas = true
 
 [node name="Reset" type="KinematicBody2D" parent="."]
-position = Vector2( 748.274, 187.392 )
+position = Vector2( 512.97, 213.736 )
 __meta__ = {
 "_edit_group_": true
 }
