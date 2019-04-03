@@ -860,11 +860,13 @@ position = Vector2( -4.41068, 161.891 )
 [node name="Path2D" parent="Node2D" index="0"]
 curve = SubResource( 70 )
 
+
 [node name="Node2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( -310.94, 107.306 )
 
 [node name="Path2D" parent="Node2D2" index="0"]
 curve = SubResource( 71 )
+
 
 
 [editable path="Node2D"]
