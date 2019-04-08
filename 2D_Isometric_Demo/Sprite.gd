@@ -1,15 +1,19 @@
-extends Sprite
-
-var top :bool
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	set_physics_process(true)
-
+extends KinematicBody2D
+#var move = Vector2()
+onready var player = get_node("../../../../Player")
+var velocity = 2
 func _physics_process(delta):
-	if Input.is_action_pressed("move_up"):
-		top = false
-	if Input.is_action_pressed("move_bottom"):
-		top = true
-	if top :
-		get_parent().set_offset(get_parent().get_offset() +(50*delta))
+	$Ray.set_cast_to(player.global_position)
+		
+	if $Ray.get_collider() == player:
+		#self.rotation = (player.position - self.position).angle()
+		if self.position.x < player.position.x:
+			self.position.x +=velocity
+		if self.position.y < player.position.y:
+			self.position.y +=velocity
+		if self.position.x > player.position.x:
+			self.position.x -=velocity
+		if self.position.y > player.position.y:
+			self.position.y -=velocity
+					#shoot(pos)
+
