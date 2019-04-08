@@ -37,5 +37,4 @@ position = Vector2( 2.38897, 20.258 )
 enabled = true
 cast_to = Vector2( 200, 50 )
 
-
 [editable path="walls/Inimigo"]

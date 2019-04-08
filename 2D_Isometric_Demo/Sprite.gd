@@ -1,7 +1,13 @@
-extends KinematicBody2D
-#var move = Vector2()
-onready var player = get_node("../../../../Player")
-var velocity = 2
+
+extends Sprite
+
+var top :bool
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	set_physics_process(true)
+
 func _physics_process(delta):
 	$Ray.set_cast_to(player.global_position)
 		
