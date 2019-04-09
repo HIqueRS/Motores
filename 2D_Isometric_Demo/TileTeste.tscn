@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://basic_ground_tiles.png" type="Texture" id=1]
 [ext_resource path="res://troll.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=4]
 [ext_resource path="res://troll.png" type="Texture" id=5]
 [ext_resource path="res://path.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trigger.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -861,7 +862,8 @@ format = 1
 position = Vector2( -4.41068, 161.891 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( -616.318, -112.918 )
+editor/display_folded = true
+position = Vector2( -656.263, -152.863 )
 
 [node name="Path2D" type="Path2D" parent="Node2D"]
 position = Vector2( 239.86, 22.6825 )
@@ -901,5 +903,12 @@ position = Vector2( 4.09399, -0.0919495 )
 [node name="Path2D" parent="Node2D2" index="0"]
 curve = SubResource( 72 )
 
+[node name="Trigo" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
+position = Vector2( -275.62, -207.714 )
+
+[connection signal="body_entered" from="Trigo/Area2D" to="troll" method="_on_Area2D_body_entered"]
 
 [editable path="Node2D2"]
+
+[editable path="Trigo"]
