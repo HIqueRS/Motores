@@ -8,6 +8,7 @@ const MOTION_SPEED = 160 # Pixels/second
 
 
 func _physics_process(delta):
+	
 	var motion = Vector2()
 	
 	if Input.is_action_pressed("move_up"):
@@ -22,4 +23,13 @@ func _physics_process(delta):
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)
+	
 
+
+
+
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "troll":
+		print ("sla")
