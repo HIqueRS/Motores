@@ -16,7 +16,6 @@ radius = 23.1289
 radius = 28.124
 
 [node name="Enemy" type="Node2D"]
-editor/display_folded = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -28.9495, -107.845 )
@@ -52,6 +51,4 @@ texture = ExtResource( 2 )
 [node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
 enabled = true
 cast_to = Vector2( 300, 0 )
-
-[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
 

@@ -11,7 +11,7 @@ onready var player = get_node("../../../../troll")
 var top :bool
 var tipo :int #vou ter q fazer um switch case na mão pois não tem
 #e tbm pq preciso mudar o estado do inimigo de patrulha pra perseguissão e voltar pra base
-# patrulha = 0 perseguir = 1 voltar = 2 
+# patrulha = 0 perseguir = 1 voltar = 2 moita = 3
 #assim eu vou usar teu codigo de base se der ruim fudeo sasgashau
 
 func _ready():
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	
 	#aqui começa o switch
 	if tipo == 0: #andando de boas
-		get_parent().set_offset(get_parent().get_offset() +(50*delta)) #seguindo
+		get_parent().set_offset(get_parent().get_offset() +(50*delta)) #seguindo path
 		if player == null: #testando se tem o troll
 			return
 		
@@ -40,7 +40,7 @@ func _physics_process(delta):
 		global_rotation = atan2(vec_to_player.y, vec_to_player.x)
 		move_and_collide(vec_to_player * MOVE_SPEED * delta)
 		if !raycast.is_colliding():
-			tipo = 0 #era pra ir pro 2 mas não to conseguindo fazer funcionar por agora
+			tipo = 2 #era pra ir pro 2 mas não to conseguindo fazer funcionar por agora
 	
 	if tipo == 2: #voltando pra base
 		move_and_slide(Vector2(10,10), Vector2(0,0))
@@ -50,6 +50,18 @@ func _physics_process(delta):
 				tipo = 1 #vai pro modo de seguir
 		if position.x == 0 && position.y == 0:
 			tipo = 0
-	
+	if tipo == 3: #andando de boas
+		get_parent().set_offset(get_parent().get_offset() +(50*delta)) #seguindo path
 	#aqui termina
 	
+
+func _on_Area_Moita_body_entered(body):
+	if body.name == "troll":
+		print("hue")
+		tipo = 3
+		
+
+func _on_Area_Moita_body_exited(body):
+	if body.name == "troll":
+		print("br")
+		tipo = 0
