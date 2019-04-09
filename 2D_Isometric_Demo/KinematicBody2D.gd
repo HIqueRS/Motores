@@ -40,7 +40,7 @@ func _physics_process(delta):
 		global_rotation = atan2(vec_to_player.y, vec_to_player.x)
 		move_and_collide(vec_to_player * MOVE_SPEED * delta)
 		if !raycast.is_colliding():
-			tipo = 2
+			tipo = 0 #era pra ir pro 2 mas não to conseguindo fazer funcionar por agora
 	
 	if tipo == 2: #voltando pra base
 		move_and_slide(Vector2(10,10), Vector2(0,0))
