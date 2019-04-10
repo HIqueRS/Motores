@@ -33,3 +33,10 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Animal":
 		print ("cara isso ae")
 		get_tree().reload_current_scene()
+
+
+func _on_Flag_body_entered(body):
+	if body.name == "Animal":
+		print ("Parabens voce ganhou")
+		get_tree().reload_current_scene()
+	pass # Replace with function body.
