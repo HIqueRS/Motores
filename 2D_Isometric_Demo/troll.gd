@@ -30,3 +30,6 @@ func _on_Area2D_body_entered(body):
 	if body.name == "troll":
 		print ("sla")
 		get_tree().reload_current_scene()
+	if body.name == "Animal":
+		print ("cara isso ae")
+		get_tree().reload_current_scene()
