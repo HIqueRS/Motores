@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MOVE_SPEED = 160
+const MOVE_SPEED = 50
 
 onready var player = get_node("../troll")
 #onready var Path = get_node("../Sprite")

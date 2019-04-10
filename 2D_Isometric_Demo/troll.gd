@@ -33,11 +33,3 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Animal":
 		print ("cara isso ae")
 		get_tree().reload_current_scene()
-
-
-func _on_Animal_Area_body_entered(body):
-	pass # Replace with function body.
-
-
-func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
-	pass # Replace with function body.

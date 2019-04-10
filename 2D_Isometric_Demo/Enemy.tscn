@@ -3,16 +3,16 @@
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://troll.png" type="Texture" id=2]
 
-[sub_resource type="Curve2D" id=61]
+[sub_resource type="Curve2D" id=53]
 bake_interval = 9.97
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 34.5686, 97.1545, 0, 0, 0, 0, 192.076, 163.895, 0, 0, 0, 0, 34.4197, 98.1364, 0, 0, 0, 0, 36.1068, 95.5969 )
+"points": PoolVector2Array( 0, 0, 0, 0, 34.5686, 97.1545, 0, 0, 0, 0, -440.161, 95.7399, 0, 0, 0, 0, 34.4197, 98.1364, 0, 0, 0, 0, 36.1068, 95.5969 )
 }
 
-[sub_resource type="CircleShape2D" id=62]
+[sub_resource type="CircleShape2D" id=54]
 radius = 23.1289
 
-[sub_resource type="CircleShape2D" id=63]
+[sub_resource type="CircleShape2D" id=55]
 radius = 28.124
 
 [node name="Enemy" type="Node2D"]
@@ -20,11 +20,11 @@ radius = 28.124
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -28.9495, -107.845 )
 scale = Vector2( 0.964678, 1.11356 )
-curve = SubResource( 61 )
+curve = SubResource( 53 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 34.5686, 97.1545 )
-rotation = 0.400794
+rotation = -3.13861
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 rotation = -0.0192284
@@ -35,14 +35,14 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
-shape = SubResource( 62 )
+shape = SubResource( 54 )
 disabled = true
 
 [node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
 editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/KinematicBody2D/Area2D"]
-shape = SubResource( 63 )
+shape = SubResource( 55 )
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
 modulate = Color( 0, 0, 0, 1 )
