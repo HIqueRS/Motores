@@ -558,13 +558,11 @@ __meta__ = {
 
 [node name="Animal_Collision" type="CollisionShape2D" parent="Animal"]
 rotation = 5.58794e-009
-scale = Vector2( 1, 1 )
 shape = SubResource( 53 )
 
 [node name="Animal_Area" type="Area2D" parent="Animal"]
 editor/display_folded = true
 rotation = 1.86265e-009
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animal/Animal_Area"]
 shape = SubResource( 54 )
