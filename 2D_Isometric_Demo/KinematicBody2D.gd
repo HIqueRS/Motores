@@ -4,7 +4,7 @@ const MOVE_SPEED = 50
 
 onready var raycast = $RayCast2D
 
-onready var player = get_node("../../../../troll")
+onready var player = get_node("../../../../Player").get_child(0)
 onready var Animal = get_node("../../../../Animal")
 #onready var Path = get_node("../Sprite")
 

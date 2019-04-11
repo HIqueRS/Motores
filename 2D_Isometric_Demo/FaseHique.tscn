@@ -5,7 +5,7 @@
 [ext_resource path="res://inimigo.png" type="Texture" id=3]
 [ext_resource path="res://Teste.gd" type="Script" id=4]
 [ext_resource path="res://animal.png" type="Texture" id=5]
-[ext_resource path="res://troll.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Polymorph.tscn" type="PackedScene" id=6]
 [ext_resource path="res://flag.png" type="Texture" id=7]
 [ext_resource path="res://moita.png" type="Texture" id=8]
 
@@ -632,12 +632,11 @@ shape = SubResource( 57 )
 [node name="Sprite" type="Sprite" parent="Fase/Animal"]
 texture = ExtResource( 5 )
 
-[node name="troll" parent="Fase" instance=ExtResource( 6 )]
-position = Vector2( 0, -64 )
+[node name="Player" parent="Fase" instance=ExtResource( 6 )]
+position = Vector2( 39.6667, -126.934 )
 
 [node name="Trigo" type="Node2D" parent="Fase"]
-editor/display_folded = true
-position = Vector2( -74.2787, -75.509 )
+position = Vector2( -72.692, -91.3757 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -692,7 +691,6 @@ enabled = true
 cast_to = Vector2( 300, 0 )
 
 [node name="Moita" type="Node2D" parent="Fase"]
-editor/display_folded = true
 position = Vector2( 642.338, -556.105 )
 scale = Vector2( 0.5, 0.5 )
 __meta__ = {
@@ -727,10 +725,7 @@ texture = ExtResource( 8 )
 position = Vector2( -65.5938, -57.0591 )
 shape = SubResource( 62 )
 
-[connection signal="body_entered" from="Fase/Enemy2/Path2D/PathFollow2D/KinematicBody2D/Area2D" to="Fase/troll" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Fase/Animal/Animal_Area" to="Fase/Animal" method="_on_Animal_Area_body_entered"]
-[connection signal="body_entered" from="Fase/Trigo/Flag" to="Fase/troll" method="_on_Flag_body_entered"]
-[connection signal="body_entered" from="Fase/Enemy/Path2D/PathFollow2D/KinematicBody2D/Area2D" to="Fase/troll" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Fase/Moita/Sprite_Moita/Area_Moita" to="Fase/Enemy/Path2D/PathFollow2D/KinematicBody2D" method="_on_Area_Moita_body_entered"]
 [connection signal="body_entered" from="Fase/Moita/Sprite_Moita/Area_Moita" to="Fase/Enemy2/Path2D/PathFollow2D/KinematicBody2D" method="_on_Area_Moita_body_entered"]
 [connection signal="body_exited" from="Fase/Moita/Sprite_Moita/Area_Moita" to="Fase/Enemy/Path2D/PathFollow2D/KinematicBody2D" method="_on_Area_Moita_body_exited"]

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const MOVE_SPEED = 50
 
-onready var player = get_node("../troll")
+onready var player = get_node("../Player").get_child(0)
 #onready var Path = get_node("../Sprite")
 
 #vou meio q dar merge nos nossos dois codigos pq acho q a sprite bugou tudo
@@ -20,7 +20,7 @@ func _ready():
 	set_physics_process(true)
 	
 func _physics_process(delta):
-	
+	player = get_node("../Player").get_child(0)
 	if player == null: #testando se tem o troll
 		return
 	
@@ -35,7 +35,7 @@ func _physics_process(delta):
 	
 
 func _on_Animal_Area_body_entered(body):
-	if body.name == "troll":
+	if body.name == get_node("../Player").get_child(0).name:
 		print("booora")
 		free = true
 	
