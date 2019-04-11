@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://troll.png" type="Texture" id=2]
+[ext_resource path="res://inimigo.png" type="Texture" id=2]
 
 [sub_resource type="Curve2D" id=1]
 bake_interval = 9.97
@@ -46,7 +46,6 @@ editor/display_folded = true
 shape = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
-modulate = Color( 0, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
