@@ -4,7 +4,7 @@ const MOVE_SPEED = 50
 
 onready var raycast = $RayCast2D
 
-onready var player = get_node("../../../../Player").get_child(0)
+onready var player = get_node("../../../../troll")
 onready var Animal = get_node("../../../../Animal")
 #onready var Path = get_node("../Sprite")
 
@@ -21,9 +21,6 @@ func _ready():
 	Animal_Hide = false
 	set_physics_process(true)
 	
-func _process(delta):
-	player = get_node("../../../../Player").get_child(0)
-
 func _physics_process(delta):
 	
 	#aqui começa o switch
@@ -95,4 +92,3 @@ func _on_Area_Moita_body_exited(body):
 	if body.name == "Animal":
 		print("q o otacu tá puto")
 		Animal_Hide= false
-
