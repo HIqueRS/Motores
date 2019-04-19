@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Enemyt.gd" type="Script" id=1]
+[ext_resource path="res://Playert.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 25.4562
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 87.4831
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 74.8824
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemyt" type="KinematicBody2D" parent="."]
+modulate = Color( 0, 1, 0, 1 )
+light_mask = 0
+position = Vector2( 119.868, 342.479 )
+scale = Vector2( 0.400001, 0.36 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="corpo" type="CollisionShape2D" parent="Enemyt"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Enemyt"]
+
+[node name="Area2D" type="Area2D" parent="Enemyt"]
+
+[node name="circulo" type="CollisionShape2D" parent="Enemyt/Area2D"]
+modulate = Color( 0.537255, 0, 0, 1 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="visao" type="CollisionPolygon2D" parent="Enemyt/Area2D"]
+modulate = Color( 0.870588, 0.870588, 0.843137, 1 )
+scale = Vector2( 1, 1 )
+polygon = PoolVector2Array( 12.0469, -11.732, 692.353, -351.137, 784.884, -132.764, 786.735, 59.7001, 721.963, 303.982, 11.1193, 11.9681 )
+one_way_collision = true
+
+[node name="Playert" type="KinematicBody2D" parent="."]
+position = Vector2( 677.381, 395.978 )
+scale = Vector2( 0.200001, 0.16 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Playert"]
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Enemyt/Area2D" to="Enemyt" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Enemyt/Area2D" to="Enemyt" method="_on_Area2D_body_exited"]
