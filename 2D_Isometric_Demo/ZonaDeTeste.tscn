@@ -1,52 +1,22 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enemyt.gd" type="Script" id=1]
-[ext_resource path="res://Playert.gd" type="Script" id=2]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 25.4562
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 87.4831
+[ext_resource path="res://Playert.gd" type="Script" id=1]
+[ext_resource path="res://test.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 74.8824
 
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 78.0539
+
 [node name="Node2D" type="Node2D"]
 
-[node name="Enemyt" type="KinematicBody2D" parent="."]
-modulate = Color( 0, 1, 0, 1 )
-light_mask = 0
-position = Vector2( 119.868, 342.479 )
-scale = Vector2( 0.400001, 0.36 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="corpo" type="CollisionShape2D" parent="Enemyt"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Enemyt"]
-
-[node name="Area2D" type="Area2D" parent="Enemyt"]
-
-[node name="circulo" type="CollisionShape2D" parent="Enemyt/Area2D"]
-modulate = Color( 0.537255, 0, 0, 1 )
-scale = Vector2( 1, 1 )
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="visao" type="CollisionPolygon2D" parent="Enemyt/Area2D"]
-modulate = Color( 0.870588, 0.870588, 0.843137, 1 )
-scale = Vector2( 1, 1 )
-polygon = PoolVector2Array( 12.0469, -11.732, 692.353, -351.137, 784.884, -132.764, 786.735, 59.7001, 721.963, 303.982, 11.1193, 11.9681 )
-one_way_collision = true
-
 [node name="Playert" type="KinematicBody2D" parent="."]
-position = Vector2( 677.381, 395.978 )
+position = Vector2( 884.301, 282.03 )
 scale = Vector2( 0.200001, 0.16 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -54,5 +24,33 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playert"]
 shape = SubResource( 3 )
 
-[connection signal="body_entered" from="Enemyt/Area2D" to="Enemyt" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Enemyt/Area2D" to="Enemyt" method="_on_Area2D_body_exited"]
+[node name="test" type="KinematicBody2D" parent="."]
+position = Vector2( 59.4217, 300.401 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+modulate = Color( 0.988235, 0.0117647, 0.0117647, 1 )
+self_modulate = Color( 0.921569, 0.0431373, 0.0431373, 1 )
+shape = SubResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="test"]
+enabled = true
+cast_to = Vector2( 0, 0 )
+
+[node name="Area2D" type="Area2D" parent="test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test/Area2D"]
+shape = SubResource( 5 )
+one_way_collision = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="test/Area2D"]
+position = Vector2( -1.74155, 7.76532 )
+scale = Vector2( 0.994679, 1.06163 )
+polygon = PoolVector2Array( -2.20044, -7.20175, 434.874, -226.902, 525.798, -128.261, 525.798, 85.4611, 444.445, 193.07 )
+one_way_collision = true
+
+[connection signal="body_entered" from="test/Area2D" to="test" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="test/Area2D" to="test" method="_on_Area2D_body_exited"]
