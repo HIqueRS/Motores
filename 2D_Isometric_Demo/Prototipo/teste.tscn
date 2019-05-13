@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Prototipo/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Prototipo/troll.png" type="Texture" id=2]
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.1289
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 28.124
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+rotation = -0.0192284
+scale = Vector2( 1.03662, 0.898021 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 300, 0 )
+
