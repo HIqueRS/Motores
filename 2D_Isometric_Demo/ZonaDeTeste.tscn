@@ -3,12 +3,12 @@
 [ext_resource path="res://Playert.gd" type="Script" id=1]
 [ext_resource path="res://test.gd" type="Script" id=2]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 74.8824
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=3]
 radius = 78.0539
 
 [node name="Node2D" type="Node2D"]
@@ -22,7 +22,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Playert"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="test" type="KinematicBody2D" parent="."]
 position = Vector2( 59.4217, 300.401 )
@@ -31,19 +31,19 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
-modulate = Color( 0.988235, 0.0117647, 0.0117647, 1 )
-self_modulate = Color( 0.921569, 0.0431373, 0.0431373, 1 )
-shape = SubResource( 4 )
-
 [node name="RayCast2D" type="RayCast2D" parent="test"]
 enabled = true
 cast_to = Vector2( 0, 0 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+modulate = Color( 0.988235, 0.0117647, 0.0117647, 1 )
+self_modulate = Color( 0.921569, 0.0431373, 0.0431373, 1 )
+shape = SubResource( 2 )
+
 [node name="Area2D" type="Area2D" parent="test"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test/Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="test/Area2D"]

@@ -7,7 +7,7 @@ var pega_ele = false
 var move_speed = 30
 
 func _physics_process(delta):
-	ray.cast_to = pf.global_position - global_position
+	ray.cast_to = pf.position - global_position
 	
 	#move_and_slide(pf.global_position - global_position)
 	var goto = (pf.global_position - global_position).normalized()
