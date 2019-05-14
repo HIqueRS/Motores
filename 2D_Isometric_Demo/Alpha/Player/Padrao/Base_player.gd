@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var MOTION_SPEED = 160 # Pixels/second
-#var MOTION_SPEED
+#onready var MOTION_SPEED = 160 # Pixels/second
+var MOTION_SPEED
 
 onready var anhanga = preload("res://Alpha/Player/Padrao/Anhanga.tscn")
 onready var onca = preload("res://Alpha/Player/Transf - Onça/TransfOnca.tscn")
@@ -16,7 +16,9 @@ func _ready():
 	actual_shape = anhanga.instance()
 	add_child(actual_shape)
 	
-	#MOTION_SPEED = get_child(0).get_script()
+	MOTION_SPEED = get_child(0).MOTION_SPEED
+	
+	
 	
 	pass
 
@@ -31,6 +33,8 @@ func Polymorph_onca():
 	add_child(actual_shape)
 	get_child(0).position.x = pos_x
 	get_child(0).position.y = pos_y
+	
+	MOTION_SPEED = get_child(0).MOTION_SPEED
 	
 	AnhangaT = false #não é humanoide
 	OncaT = false #não pode mais virar onca
@@ -48,6 +52,8 @@ func Back_to_normal():
 	add_child(actual_shape)
 	get_child(0).position.x = pos_x
 	get_child(0).position.y = pos_y
+	
+	MOTION_SPEED = get_child(0).MOTION_SPEED
 	
 	AnhangaT = true #é humanoide
 	

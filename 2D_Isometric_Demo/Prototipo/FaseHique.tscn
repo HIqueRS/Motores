@@ -581,11 +581,12 @@ scale = Vector2( 0.964678, 1.11356 )
 curve = SubResource( 53 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Fase/Enemy2/Path2D"]
-position = Vector2( 74.6431, 64.427 )
+position = Vector2( 34.5686, 97.1545 )
 rotation = -3.13861
 rotate = false
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Fase/Enemy2/Path2D/PathFollow2D"]
+editor/display_folded = true
 position = Vector2( -81.044, 86.8624 )
 rotation = -0.0192284
 scale = Vector2( 1.03662, 0.898021 )
@@ -658,7 +659,6 @@ shape = SubResource( 58 )
 current = true
 
 [node name="Trigo" type="Node2D" parent="Fase"]
-editor/display_folded = true
 position = Vector2( -74.2787, -75.509 )
 __meta__ = {
 "_edit_group_": true
