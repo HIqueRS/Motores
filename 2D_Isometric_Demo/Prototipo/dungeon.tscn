@@ -4,7 +4,6 @@
 [ext_resource path="res://Prototipo/Polymorph.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prototipo/path.tscn" type="PackedScene" id=3]
 
-
 [node name="dungeon" type="Node2D"]
 
 [node name="floor" type="TileMap" parent="."]

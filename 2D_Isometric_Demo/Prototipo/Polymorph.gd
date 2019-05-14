@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var imp = preload("res://imp.tscn")
-onready var troll = preload("res://troll.tscn")
+onready var imp = preload("res://Prototipo/imp.tscn")
+onready var troll = preload("res://Prototipo/troll.tscn")
 onready var wild_shape = 0 #0 = troll, 1 = imp, 2 = corno
 onready var max_shapes = 2
 # Declare member variables here. Examples:
