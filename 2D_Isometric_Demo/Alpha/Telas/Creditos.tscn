@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Tela.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tela" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Voltar" type="Button" parent="Tela"]
+margin_left = 23.57
+margin_top = 534.527
+margin_right = 107.57
+margin_bottom = 554.527
+rect_scale = Vector2( 2, 2 )
+text = "Voltar"
+flat = true
+align = 0
+
+[connection signal="pressed" from="Tela/Voltar" to="Tela" method="_on_Voltar_pressed"]
