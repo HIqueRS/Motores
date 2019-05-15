@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Isometric Game"
-run/main_scene="res://Alpha/Fases/FaseTeste.tscn"
+run/main_scene="res://Alpha/Telas/TelaInicial_teste.tscn"
 config/icon="res://Prototipo/icon.png"
 
 [gdnative]

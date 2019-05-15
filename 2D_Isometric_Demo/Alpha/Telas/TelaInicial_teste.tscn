@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Alpha/Fases/Control.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+
+[node name="Novo jogo" type="Button" parent="Control"]
+margin_left = 23.5702
+margin_top = 298.246
+margin_right = 107.57
+margin_bottom = 318.246
+rect_scale = Vector2( 2, 2 )
+text = "Novo jogo"
+flat = true
+align = 0
+
+[node name="Continue" type="Button" parent="Control"]
+margin_left = 9.97614
+margin_top = 342.834
+margin_right = 78.9761
+margin_bottom = 362.834
+rect_scale = Vector2( 3, 3 )
+text = "Continue"
+flat = true
+align = 0
+
+[node name="Instrucoes" type="Button" parent="Control"]
+margin_left = 23.5702
+margin_top = 407.096
+margin_right = 107.57
+margin_bottom = 427.096
+rect_scale = Vector2( 2, 2 )
+text = "Instruções"
+flat = true
+align = 0
+
+[node name="Opcoes" type="Button" parent="Control"]
+margin_left = 23.57
+margin_top = 447.51
+margin_right = 107.57
+margin_bottom = 467.51
+rect_scale = Vector2( 2, 2 )
+text = "Opções"
+flat = true
+align = 0
+
+[node name="Creditos" type="Button" parent="Control"]
+margin_left = 23.57
+margin_top = 491.51
+margin_right = 107.57
+margin_bottom = 511.51
+rect_scale = Vector2( 2, 2 )
+text = "Créditos"
+flat = true
+align = 0
+
+[node name="Sair" type="Button" parent="Control"]
+margin_left = 23.57
+margin_top = 534.527
+margin_right = 107.57
+margin_bottom = 554.527
+rect_scale = Vector2( 2, 2 )
+text = "Sair"
+flat = true
+align = 0
+
+[connection signal="pressed" from="Control/Novo jogo" to="Control" method="_on_Novo_jogo_pressed"]
+[connection signal="pressed" from="Control/Instrucoes" to="Control" method="_on_Instrucoes_pressed"]
+[connection signal="pressed" from="Control/Opcoes" to="Control" method="_on_Opcoes_pressed"]
+[connection signal="pressed" from="Control/Creditos" to="Control" method="_on_Creditos_pressed"]
+[connection signal="pressed" from="Control/Sair" to="Control" method="_on_Sair_pressed"]
