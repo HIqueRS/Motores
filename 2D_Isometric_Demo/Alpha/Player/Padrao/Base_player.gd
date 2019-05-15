@@ -11,7 +11,7 @@ var OncaT = true #se pode transformar
 var TatuT = true
 var AnhangaT = true #se tá na forma humanoide
 
-onready var animal = get_node("../Tatu")#acho que ele tem q se chamar animal
+onready var animal = get_node("../Animal")#acho que ele tem q se chamar animal
 
 func _ready():
 	

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Alpha/MapaThings/Tile/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alpha/MapaThings/WIN/WIN.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alpha/Animal/Onça/Onca.tscn" type="PackedScene" id=4]
 
 [node name="Faseteste" type="Node2D"]
 
@@ -13,6 +14,9 @@ tile_data = PoolIntArray( -327679, 2, 65542, -327678, 2, 65540, -262144, 2, 6554
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 213.291, 135.93 )
 
-[node name="Tatu" parent="." instance=ExtResource( 3 )]
-position = Vector2( 472.102, 108.538 )
+[node name="WIN" parent="." instance=ExtResource( 3 )]
+position = Vector2( 296.677, 269.076 )
+
+[node name="Animal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 542.353, 143.461 )
 
