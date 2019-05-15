@@ -16,7 +16,7 @@ func _on_Instrucoes_pressed():
 
 func _on_Novo_jogo_pressed():
 	
-	get_tree().change_scene("res://Alpha/Fases/FaseTeste.tscn")
+	get_tree().change_scene("res://Alpha/Fases/Fase_Base.tscn")
 	
 	pass # Replace with function body.
 
