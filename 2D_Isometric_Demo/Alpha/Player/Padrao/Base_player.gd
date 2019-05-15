@@ -21,6 +21,7 @@ func _ready():
 	
 	MOTION_SPEED = get_child(0).MOTION_SPEED
 	
+	
 	pass
 
 func _physics_process(delta):
