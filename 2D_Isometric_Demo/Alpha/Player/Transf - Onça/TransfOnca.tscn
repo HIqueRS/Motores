@@ -17,4 +17,5 @@ scale = Vector2( 0.107737, 0.115027 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 

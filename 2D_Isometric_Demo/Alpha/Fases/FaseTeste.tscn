@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Alpha/MapaThings/Tile/TileMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=3]
+
+[node name="Faseteste" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 1 )]
+position = Vector2( 354.31, 127.877 )
+tile_data = PoolIntArray( -327679, 2, 65542, -327678, 2, 65540, -262144, 2, 65542, -262143, 2, 65539, -262142, 2, 65537, -262141, 2, 65540, -131073, 2, 65542, -196608, 2, 65539, -196607, 2, 0, -196606, 2, 1, -196605, 2, 65537, -196604, 2, 65540, -65538, 2, 65542, -65537, 2, 65539, -131072, 2, 1, -131071, 2, 1, -131070, 2, 1, -131069, 2, 1, -131068, 2, 4, -3, 2, 65542, -2, 2, 65539, -1, 2, 1, -65536, 2, 0, -65535, 2, 1, -65534, 2, 0, -65533, 2, 65538, -65532, 2, 65543, 65533, 2, 5, 65534, 2, 1, 65535, 2, 0, 0, 2, 1, 1, 2, 1, 2, 2, 0, 3, 2, 4, 131069, 2, 65541, 131070, 2, 65536, 131071, 2, 1, 65536, 2, 1, 65537, 2, 0, 65538, 2, 0, 65539, 2, 4, 196606, 2, 65541, 196607, 2, 65536, 131072, 2, 1, 131073, 2, 1, 131074, 2, 0, 131075, 2, 4, 262143, 2, 65541, 196608, 2, 7, 196609, 2, 7, 196610, 2, 7, 196611, 2, 65543 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 213.291, 135.93 )
+
+[node name="Tatu" parent="." instance=ExtResource( 3 )]
+position = Vector2( 472.102, 108.538 )
+

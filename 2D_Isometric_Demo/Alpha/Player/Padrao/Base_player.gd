@@ -11,6 +11,8 @@ var OncaT = true #se pode transformar
 var TatuT = true
 var AnhangaT = true #se tá na forma humanoide
 
+onready var animal = get_node("../Tatu")#acho que ele tem q se chamar animal
+
 func _ready():
 	
 	var actual_shape
@@ -23,6 +25,9 @@ func _ready():
 
 func _physics_process(delta):
 	
+	if Input.is_action_just_pressed("action"): #so teset 
+		animal.stop()
+		pass
 	Movement()
 	Transformations()
 

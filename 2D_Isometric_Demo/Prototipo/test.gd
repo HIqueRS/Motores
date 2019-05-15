@@ -7,17 +7,24 @@ var pega_ele = false
 var move_speed = 30
 
 func _physics_process(delta):
-	ray.cast_to = pf.position - global_position
+	ray.cast_to = pf.global_position
+	
 	
 	#move_and_slide(pf.global_position - global_position)
-	var goto = (pf.global_position - global_position).normalized()
+	var goto = (pf.global_position).normalized()
 	var distance = global_position.distance_to(pf.global_position)
+	
+	var vec_to_player = pf.global_position - global_position
+	vec_to_player = vec_to_player.normalized()
+	
 	if pega_ele && ray.get_collider() == pf :
-		var vec_to_player = pf.global_position - global_position
-		vec_to_player = vec_to_player.normalized()
-		global_rotation = atan2(vec_to_player.y, vec_to_player.x)
+		
+		#rotation = atan2(vec_to_player.y, vec_to_player.x)
+		#ray.rotation += atan2(vec_to_player.y, vec_to_player.x);
+		pass
 
-		move_and_slide(goto * move_speed )
+	move_and_slide(goto * move_speed )
+
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

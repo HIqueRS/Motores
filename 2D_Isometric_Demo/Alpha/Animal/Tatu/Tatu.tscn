@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Alpha/Animal/Tatu/Tatu.gd" type="Script" id=1]
+[ext_resource path="res://Alpha/Player/Transf - Tatu/armadillo-46029_960_720.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 22.7132
+
+[sub_resource type="CircleShape2D" id=1]
+
+[node name="Tatu" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.98255, 1.33814 )
+scale = Vector2( 0.0728976, 0.0891697 )
+texture = ExtResource( 2 )
+flip_h = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_tatu"]

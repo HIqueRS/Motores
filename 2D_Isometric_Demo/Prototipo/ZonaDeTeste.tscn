@@ -3,7 +3,6 @@
 [ext_resource path="res://Prototipo/Playert.gd" type="Script" id=1]
 [ext_resource path="res://Prototipo/test.gd" type="Script" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 74.8824
 
@@ -16,7 +15,6 @@ radius = 78.0539
 
 [node name="Playert" type="KinematicBody2D" parent="."]
 position = Vector2( 884.301, 282.03 )
-scale = Vector2( 0.200001, 0.16 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -26,7 +24,6 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="test" type="KinematicBody2D" parent="."]
-position = Vector2( 59.4217, 300.401 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -34,7 +31,7 @@ __meta__ = {
 
 [node name="RayCast2D" type="RayCast2D" parent="test"]
 enabled = true
-cast_to = Vector2( 0, 0 )
+cast_to = Vector2( 884.301, 282.03 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
 modulate = Color( 0.988235, 0.0117647, 0.0117647, 1 )
