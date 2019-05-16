@@ -19,6 +19,11 @@ config/name="Isometric Game"
 run/main_scene="res://Alpha/Telas/TelaInicial_teste.tscn"
 config/icon="res://Prototipo/icon.png"
 
+[display]
+
+window/size/height=768
+window/stretch/mode="viewport"
+
 [gdnative]
 
 singletons=[  ]
