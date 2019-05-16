@@ -1,6 +1,6 @@
 extends Control
 
-var next = false
+var next
 
 func _ready():
 	pass
@@ -13,6 +13,11 @@ func _on_Voltar_pressed():
 
 func _on_Proxima_pressed():
 	
-	next = !next
+	next = true
+	print_debug(next)
 	
 	pass # Replace with function body.
+	
+func get_next():
+	print_debug("ue")
+	return next
