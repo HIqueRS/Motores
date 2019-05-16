@@ -46,7 +46,7 @@ func _process(delta):
 		
 
 func midle_stage():
-	FaseAtual = meio.instance()
+	#FaseAtual = meio.instance()
 	remove_child(get_child(0))
 	add_child(FaseAtual)
 	intervalo = true
