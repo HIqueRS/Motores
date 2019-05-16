@@ -29,7 +29,8 @@ func _physics_process(delta):
 	if target:
 		aim()
 	if is_chasing and target:
-		move_and_slide(target.position-global_position)
+		if !target.moita:
+			move_and_slide(target.position-global_position)
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
@@ -44,8 +45,8 @@ func aim():
 				#move_and_slide(player.position-global_position)
 
 
-func _draw():
-	draw_circle(Vector2(), detect_radius, vis_color)
+#func _draw():
+	#draw_circle(Vector2(), detect_radius, vis_color)
 	#if target:
 #		draw_circle((hit_pos - position).rotated(-rotation),5, laser_color)
 #		draw_line(Vector2(), (hit_pos- position).rotated(-rotation), laser_color)
@@ -78,3 +79,8 @@ func _on_Visibility_body_exited(body):
 			target = null
 			is_chasing = false
 			$Sprite.self_modulate.r = 0.2
+
+func _on_Area2D_body_entered(body):
+	if body.name=="Player" or body.name == "Animal":
+		print_debug("RESETOOOOOOUUU")
+		get_tree().reload_current_scene()

@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Alpha/Fases/Fase.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/MapaThings/Tile/TileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Alpha/MapaThings/WIN/WIN.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Alpha/Animal/Onça/Onca.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Alpha/Enemy/Hunter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=5]
 
 [node name="Fase" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,8 +20,5 @@ position = Vector2( 296.677, 269.076 )
 position = Vector2( 213.291, 135.93 )
 
 [node name="Animal" parent="." instance=ExtResource( 5 )]
-position = Vector2( 581.544, 169.086 )
-
-[node name="Hunter" parent="." instance=ExtResource( 6 )]
-position = Vector2( 990.044, 22.9943 )
+position = Vector2( 758.43, 123.761 )
 
