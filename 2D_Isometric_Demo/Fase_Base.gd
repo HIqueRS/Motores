@@ -5,10 +5,15 @@ var NFase = 0
 onready var Fase1 = preload("res://Alpha/Fases/FaseTeste.tscn")
 var FaseAtual
 
-var Fases = [preload("res://Alpha/Fases/FaseTeste.tscn"),preload("res://Alpha/Fases/teste2.tscn")]
-var meio = preload("res://Alpha/Telas/Meio.tscn")
+var Fases = [preload("res://Alpha/Fases/FasePedro1.tscn"),
+			 preload("res://Alpha/Fases/FasePedro3.tscn"),
+			 preload("res://Alpha/Fases/FasePedro2.tscn"),
+			 preload("res://Alpha/Fases/FasePedro5.tscn"),
+			 preload("res://Alpha/Fases/FasePedro4.tscn"),
+			 preload("res://Alpha/Fases/FasePedro6.tscn")]
 
 var intervalo = false
+
 
 var next = false
 var goto = false
@@ -41,7 +46,7 @@ func _process(delta):
 		
 
 func midle_stage():
-	FaseAtual = meio.instance()
+	#FaseAtual = meio.instance()
 	remove_child(get_child(0))
 	add_child(FaseAtual)
 	intervalo = true

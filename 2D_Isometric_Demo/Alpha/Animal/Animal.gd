@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+var moita = false
 
 onready var MOVE_SPEED 
 

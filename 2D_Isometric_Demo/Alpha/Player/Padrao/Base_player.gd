@@ -11,10 +11,12 @@ var OncaT = true #se pode transformar
 var TatuT = true
 var AnhangaT = true #se tá na forma humanoide
 
+var moita = false
+
 onready var animal = get_node("../Animal")#acho que ele tem q se chamar animal
 
 func _ready():
-	
+
 	var actual_shape
 	actual_shape = anhanga.instance()
 	add_child(actual_shape)
@@ -33,7 +35,8 @@ func _physics_process(delta):
 	Transformations()
 
 func Movement():
-	
+	if Input.is_action_just_pressed("R"):
+		get_tree().reload_current_scene()
 	var motion = Vector2()
 	
 	if Input.is_action_pressed("move_up"):
