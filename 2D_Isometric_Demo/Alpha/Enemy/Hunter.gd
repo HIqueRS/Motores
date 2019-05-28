@@ -30,7 +30,9 @@ func _physics_process(delta):
 		aim()
 	if is_chasing and target:
 		if !target.moita:
-			move_and_slide(target.position-global_position)
+			var vec_to_payer = target.position- global_position
+			vec_to_payer = vec_to_payer.normalized()
+			move_and_collide(vec_to_payer * delta *100)
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
