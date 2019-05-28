@@ -127,5 +127,7 @@ func Back_to_normal():
 	MOTION_SPEED = get_child(0).MOTION_SPEED
 	
 	AnhangaT = true #é humanoide
+	TatuT = true
+	OncaT = true
 	
 	pass
