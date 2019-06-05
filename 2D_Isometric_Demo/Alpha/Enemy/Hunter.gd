@@ -18,10 +18,11 @@ var player_is_on_sight = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Sprite.self_modulate = Color(0.2, 0, 0)
-	var shape = CircleShape2D.new()
-	shape.radius = detect_radius
-	$Visibility/CollisionShape2D.shape = shape
+#	$Sprite.self_modulate = Color(0.2, 0, 0)
+#	var shape = CircleShape2D.new()
+#	shape.radius = detect_radius
+#	$Visibility/CollisionShape2D.shape = shape
+	pass
 
 
 func _physics_process(delta):

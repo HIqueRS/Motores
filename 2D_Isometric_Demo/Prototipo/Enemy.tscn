@@ -3,7 +3,6 @@
 [ext_resource path="res://Prototipo/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Prototipo/inimigo.png" type="Texture" id=2]
 
-
 [sub_resource type="Curve2D" id=1]
 bake_interval = 9.97
 _data = {
