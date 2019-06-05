@@ -7,6 +7,10 @@ var laser_color = Color(1.0, .329, .298)
 onready var player = get_node("../Player")
 onready var animal = get_node("../Animal")
 
+onready var Pos1 = get_node("../Pos1")
+onready var Pos2 = get_node("../Pos2")
+var aux
+
 var target
 var hit_pos
 var is_chasing = false
@@ -22,11 +26,13 @@ func _ready():
 #	var shape = CircleShape2D.new()
 #	shape.radius = detect_radius
 #	$Visibility/CollisionShape2D.shape = shape
+	aux = Pos2
 	pass
 
 
 func _physics_process(delta):
 	update()
+	
 	if target:
 		aim()
 	if is_chasing and target:
@@ -34,6 +40,14 @@ func _physics_process(delta):
 			var vec_to_payer = target.position- global_position
 			vec_to_payer = vec_to_payer.normalized()
 			move_and_collide(vec_to_payer * delta *100)
+	else:
+		#parent.set_offset(parent.get_offset() + mov_speed * delta)
+		var vec_to_pos2 = aux.position- global_position
+		vec_to_pos2 = vec_to_pos2.normalized()
+		move_and_collide(vec_to_pos2 * delta *100)
+		
+		
+		pass
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
@@ -72,6 +86,7 @@ func _on_Visibility_body_exited(body):
 		player_is_on_sight = false
 	if body.name=="Animal":
 		animal_is_on_sight = false
+	
 	if body == target:
 		if body.name == "Player" and animal_is_on_sight:
 			target = animal
@@ -87,3 +102,13 @@ func _on_Area2D_body_entered(body):
 	if body.name=="Player" or body.name == "Animal":
 		print_debug("RESETOOOOOOUUU")
 		get_tree().reload_current_scene()
+
+
+func _on_Pos1_body_entered(body):
+	aux = Pos2
+	pass # Replace with function body.
+
+
+func _on_Pos2_body_entered(body):
+	aux = Pos1
+	pass # Replace with function body.

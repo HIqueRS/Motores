@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Alpha/Enemy/Hunter.tscn" type="PackedScene" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.27844
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Hunter" parent="." instance=ExtResource( 1 )]
+position = Vector2( -0.376678, 0.32486 )
+rotation = -0.0026954
+
+[node name="Pos1" type="Position2D" parent="."]
+
+[node name="Pos1" type="Area2D" parent="Pos1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pos1/Pos1"]
+shape = SubResource( 1 )
+
+[node name="Pos2" type="Position2D" parent="."]
+position = Vector2( 312.943, 2.57214 )
+
+[node name="Pos2" type="Area2D" parent="Pos2"]
+position = Vector2( -0.000915527, 0.857364 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pos2/Pos2"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Pos1/Pos1" to="Hunter" method="_on_Pos1_body_entered"]
+[connection signal="body_entered" from="Pos2/Pos2" to="Hunter" method="_on_Pos2_body_entered"]
