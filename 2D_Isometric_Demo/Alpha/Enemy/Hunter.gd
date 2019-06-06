@@ -42,6 +42,7 @@ func _physics_process(delta):
 			move_and_collide(vec_to_payer * delta *100)
 	else:
 		#parent.set_offset(parent.get_offset() + mov_speed * delta)
+		rotation = (aux.global_position - global_position).angle()
 		var vec_to_pos2 = aux.global_position- global_position
 		vec_to_pos2 = vec_to_pos2.normalized()
 		move_and_collide(vec_to_pos2 * delta *100)
