@@ -37,12 +37,12 @@ func _physics_process(delta):
 		aim()
 	if is_chasing and target:
 		if !target.moita:
-			var vec_to_payer = target.position- global_position
+			var vec_to_payer = target.global_position- global_position
 			vec_to_payer = vec_to_payer.normalized()
 			move_and_collide(vec_to_payer * delta *100)
 	else:
 		#parent.set_offset(parent.get_offset() + mov_speed * delta)
-		var vec_to_pos2 = aux.position- global_position
+		var vec_to_pos2 = aux.global_position- global_position
 		vec_to_pos2 = vec_to_pos2.normalized()
 		move_and_collide(vec_to_pos2 * delta *100)
 		
@@ -51,12 +51,12 @@ func _physics_process(delta):
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(position, target.position, [self], collision_mask) #posicao inicial do raio #até o position global do alvo #ignorando ele mesmo #colidindo com a mask dele
+	var result = space_state.intersect_ray(position, target.global_position, [self], collision_mask) #posicao inicial do raio #até o position global do alvo #ignorando ele mesmo #colidindo com a mask dele
 	if result:
 		hit_pos = result.position
 		if result.collider.name == "Player" or result.collider.name == "Animal":
 			$Sprite.self_modulate.r = 1.0
-			rotation = (target.position - position).angle()
+			rotation = (target.global_position - global_position).angle()
 			if !is_chasing:
 				is_chasing = true
 				#move_and_slide(player.position-global_position)
