@@ -111,6 +111,7 @@ stream = ExtResource( 4 )
 autoplay = true
 
 [connection signal="pressed" from="Control/Novo jogo" to="Control" method="_on_Novo_jogo_pressed"]
+[connection signal="pressed" from="Control/Continue" to="Control" method="_on_Continue_pressed"]
 [connection signal="pressed" from="Control/Instrucoes" to="Control" method="_on_Instrucoes_pressed"]
 [connection signal="pressed" from="Control/Opcoes" to="Control" method="_on_Opcoes_pressed"]
 [connection signal="pressed" from="Control/Creditos" to="Control" method="_on_Creditos_pressed"]

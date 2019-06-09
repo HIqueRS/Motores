@@ -46,3 +46,10 @@ func _on_Sair_pressed():
 	get_tree().quit()
 	
 	pass # Replace with function body.
+
+
+func _on_Continue_pressed():
+	Global.Cont = true
+	get_tree().change_scene("res://Alpha/Fases/Fase_Base.tscn")
+	
+	pass # Replace with function body.

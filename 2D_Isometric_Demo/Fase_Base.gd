@@ -19,10 +19,17 @@ var next = false
 var goto = false
 var restart = false
 
+var Cont = false
+
 func _ready():
 	
-	if NFase == 0:
-		FaseAtual = Fases[NFase].instance()
+	Cont = Global.Cont
+	if Cont:
+		NFase = Global.read_savegame()
+	else:
+		NFase = 0
+	
+	FaseAtual = Fases[NFase].instance()
 	
 	add_child(FaseAtual)
 	
@@ -61,6 +68,7 @@ func midle_stage():
 func pass_stage():
 	
 	NFase += 1
+	Global.save(NFase)
 	FaseAtual = Fases[NFase].instance()
 	remove_child(get_child(0))
 	add_child(FaseAtual)
