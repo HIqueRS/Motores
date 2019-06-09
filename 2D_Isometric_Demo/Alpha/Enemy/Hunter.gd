@@ -4,8 +4,8 @@ export (int) var mov_speed = 250
 var vis_color = Color(1.0, 1.0, 1.0, 0.1)
 var laser_color = Color(1.0, .329, .298)
 
-onready var player = get_node("../Player")
-onready var animal = get_node("../Animal")
+onready var player = get_node("../../Player")
+onready var animal = get_node("../../Animal")
 
 onready var Pos1 = get_node("../Pos1")
 onready var Pos2 = get_node("../Pos2")
@@ -18,6 +18,8 @@ var is_chasing = false
 var animal_is_on_sight = false
 var player_is_on_sight = false
 
+
+onready var Fase = get_node("../../../Fase")
 # Declare member variables here. Examples:
 
 # Called when the node enters the scene tree for the first time.
@@ -71,6 +73,7 @@ func aim():
 
 
 func _on_Visibility_body_entered(body):
+	print_debug("ENTROOO", body.name)
 	if body.name=="Player":
 		player_is_on_sight = true
 	if body.name=="Animal":
@@ -102,7 +105,10 @@ func _on_Visibility_body_exited(body):
 func _on_Area2D_body_entered(body):
 	if body.name=="Player" or body.name == "Animal":
 		print_debug("RESETOOOOOOUUU")
-		get_tree().reload_current_scene()
+		#get_tree().reload_current_scene()
+		
+		Fase.get_script().restart()
+		
 
 
 func _on_Pos1_body_entered(body):

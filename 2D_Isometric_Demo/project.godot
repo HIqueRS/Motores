@@ -19,6 +19,10 @@ config/name="Isometric Game"
 run/main_scene="res://Alpha/Telas/TelaInicial_teste.tscn"
 config/icon="res://Prototipo/icon.png"
 
+[autoload]
+
+Global="*res://Alpha/Telas/Global.gd"
+
 [display]
 
 window/size/height=768

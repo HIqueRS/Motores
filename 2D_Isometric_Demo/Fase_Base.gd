@@ -5,8 +5,8 @@ var NFase = 0
 onready var Fase1 = preload("res://Alpha/Fases/FaseTeste.tscn")
 var FaseAtual
 
-var Fases = [preload("res://Alpha/Fases/FasePedro1.tscn"),
-			 preload("res://Alpha/Fases/FasePedro3.tscn"),
+var Fases = [preload("res://Alpha/Enemy/FaseTesteIA.tscn"),
+			 preload("res://Alpha/Fases/FasePedro1.tscn"),
 			 preload("res://Alpha/Fases/FasePedro2.tscn"),
 			 preload("res://Alpha/Fases/FasePedro5.tscn"),
 			 preload("res://Alpha/Fases/FasePedro4.tscn"),
@@ -17,6 +17,7 @@ var intervalo = false
 
 var next = false
 var goto = false
+var restart = false
 
 func _ready():
 	
@@ -30,6 +31,11 @@ func _ready():
 func _process(delta):
 	
 	next = get_child(0).next
+	restart = get_child(0).restart
+	
+	if restart:
+		pass
+	
 	if next:
 		next = false
 		#midle_stage()
