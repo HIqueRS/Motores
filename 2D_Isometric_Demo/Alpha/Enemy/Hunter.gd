@@ -36,12 +36,15 @@ func _physics_process(delta):
 	update()
 	
 	if target:
-		aim()
+		if !target.moita:
+			aim()
 	if is_chasing and target:
 		if !target.moita:
 			var vec_to_payer = target.global_position- global_position
 			vec_to_payer = vec_to_payer.normalized()
 			move_and_collide(vec_to_payer * delta *100)
+		else:
+			is_chasing = false
 	else:
 		#parent.set_offset(parent.get_offset() + mov_speed * delta)
 		rotation = (aux.global_position - global_position).angle()

@@ -15,6 +15,8 @@ func _ready():
 
 func _on_Flag_body_entered(body):
 	if body.name == "Player" or body.name == "Animal":
+		if body.name=="Animal":
+			print("erro não ta aqui")
 		body.moita=true
 
 
