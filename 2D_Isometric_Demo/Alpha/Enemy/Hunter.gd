@@ -18,6 +18,7 @@ var is_chasing = false
 var animal_is_on_sight = false
 var player_is_on_sight = false
 
+var aux_target = null
 # Declare member variables here. Examples:
 
 # Called when the node enters the scene tree for the first time.
@@ -36,15 +37,37 @@ func _physics_process(delta):
 	if target:
 		aim()
 	if is_chasing and target:
-		if !target.moita:
-			var vec_to_payer = target.position- global_position
-			vec_to_payer = vec_to_payer.normalized()
-			move_and_collide(vec_to_payer * delta *100)
+		if true: #not target.get("moita") == null: #Se o alvo tem uma variavel moita
+			if !target.moita:
+				var vec_to_payer = target.position- global_position
+				vec_to_payer = vec_to_payer.normalized()
+				move_and_collide(vec_to_payer * delta *100)
+			else: #Se o alvo entrou na moita
+				print_debug("Entrou Na Moita?")
+				if !animal_is_on_sight:
+					print_debug(animal_is_on_sight)
+					target.transform 
+					aux_target = target
+					target = null
+					is_chasing = false
+				else:
+					print_debug("ALVO ANIMAL")
+					
+		
 	else:
+		#Se o alvo saiu da moita e está no campo de visão do hunter
+		if aux_target:
+			print_debug("NAO DEVIA ENTRAR AQ COM O ANIMAL")
+			if !aux_target.moita:
+				target = aux_target
+				is_chasing = true
+				aux_target = false
+				
 		#parent.set_offset(parent.get_offset() + mov_speed * delta)
 		var vec_to_pos2 = aux.position- global_position
 		vec_to_pos2 = vec_to_pos2.normalized()
 		move_and_collide(vec_to_pos2 * delta *100)
+		
 		
 		
 		pass
@@ -82,20 +105,26 @@ func _on_Visibility_body_entered(body):
 		$Sprite.self_modulate.r = 1.0
 
 func _on_Visibility_body_exited(body):
+	if aux_target:
+		if body.name == aux_target.name: #Se o alvo ta escondido na moita e saiu do campo de visão do hunter
+			aux_target = null
 	if body.name=="Player":
 		player_is_on_sight = false
 	if body.name=="Animal":
 		animal_is_on_sight = false
-	
+		
 	if body == target:
 		if body.name == "Player" and animal_is_on_sight:
+			print_debug("TROCOU O ALVO")
 			target = animal
+			is_chasing = true
 		elif body.name == "Animal" and player_is_on_sight:
 			target = player
 		else:
 			print_debug("SAIUUUUUU")
 			target = null
 			is_chasing = false
+			#PERDEU O ALVO
 			$Sprite.self_modulate.r = 0.2
 
 func _on_Area2D_body_entered(body):
@@ -112,3 +141,7 @@ func _on_Pos1_body_entered(body):
 func _on_Pos2_body_entered(body):
 	aux = Pos1
 	pass # Replace with function body.
+
+func distracao(posicao):
+	var distraction = Position2D.new()
+	
