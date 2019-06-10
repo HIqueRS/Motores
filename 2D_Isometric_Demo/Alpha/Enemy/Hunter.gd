@@ -9,6 +9,7 @@ onready var animal = get_node("../../Animal")
 
 onready var Pos1 = get_node("../Pos1")
 onready var Pos2 = get_node("../Pos2")
+onready var Pos3 = get_node("../Pos3")
 var aux
 
 var target
@@ -18,7 +19,9 @@ var is_chasing = false
 var animal_is_on_sight = false
 var player_is_on_sight = false
 
+var aux_target = null
 var state =0 #-1 - parado 0 - patrulhando  1 - animal 2 - player 3 - coco
+var distraction = false
 
 
 onready var Fase = get_node("../../../Fase")
@@ -37,15 +40,23 @@ func _ready():
 func _physics_process(delta):
 	update()
 	
+	print(state)
+	
 	#padrão
 	if state == -1:
 		
 		if !animal.moita and animal_is_on_sight and aim(animal):
 			state = 1
+			distraction = false
+
 		elif !player.moita and player_is_on_sight and aim(player):
 			state = 2
+			distraction = false
+		elif distraction:
+			state = 3
 		else:
 			state = 0
+			distraction = false
 		pass
 	#seguindo path
 	elif state == 0:
@@ -60,6 +71,7 @@ func _physics_process(delta):
 	elif state == 1:
 		if !animal.moita and animal_is_on_sight and aim(animal):
 			chasing(animal,delta)
+			distraction = false
 		else:
 			state = -1
 		pass
@@ -67,11 +79,20 @@ func _physics_process(delta):
 	elif state == 2:
 		if !player.moita and player_is_on_sight and aim(player):
 			chasing(player,delta)
+			distraction = false
 		else:
 			state = -1
 		pass
 	#seguindo pos
 	elif state == 3:
+		chasing(Pos3,delta) # pra ver ele bugado descomente aqui
+		#distraction = false #e comente aqui
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			state = 1
+		elif !player.moita and player_is_on_sight and aim(player):
+			state = 2
+		elif !distraction:
+			state = -1
 		pass
 	
 	
@@ -99,6 +120,7 @@ func aim(var aux_target):
 func chasing(var aux_target,delta):
 	
 	rotation = (aux_target.global_position - global_position).angle()
+	
 	var vec_to_payer = aux_target.global_position- global_position
 	vec_to_payer = vec_to_payer.normalized()
 	move_and_collide(vec_to_payer * delta *100)
@@ -109,15 +131,25 @@ func _on_Visibility_body_entered(body):
 	print_debug("ENTROOO", body.name)
 	if body.name=="Player":
 		player_is_on_sight = true
+		Pos3.global_position = Pos1.global_position
+		#distraction = false
 	if body.name=="Animal":
 		animal_is_on_sight = true
+		Pos3.global_position = Pos1.global_position
+		#distraction = false
 
 
 func _on_Visibility_body_exited(body):
 	if body.name=="Player":
 		player_is_on_sight = false
+		if !animal_is_on_sight:
+			Pos3.global_position = body.global_position
+			distraction = true
 	if body.name=="Animal":
 		animal_is_on_sight = false
+		if !player_is_on_sight:
+			Pos3.global_position = body.global_position
+			distraction = true
 	
 
 func _on_Area2D_body_entered(body):
@@ -136,4 +168,12 @@ func _on_Pos1_body_entered(body):
 
 func _on_Pos2_body_entered(body):
 	aux = Pos1
+	pass # Replace with function body.
+
+
+func _on_Pos3_body_entered(body):
+	if body.name == "Hunter":
+		aux = Pos2
+		Pos3.global_position = Pos1.global_position
+		distraction = false
 	pass # Replace with function body.

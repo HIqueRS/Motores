@@ -36,7 +36,7 @@ position = Vector2( -241.176, 141.691 )
 [node name="Pos1" parent="Node2D" index="1"]
 editor/display_folded = true
 
-[node name="Pos2" parent="Node2D" index="2"]
+[node name="Pos2" parent="Node2D" index="3"]
 editor/display_folded = true
 
 
