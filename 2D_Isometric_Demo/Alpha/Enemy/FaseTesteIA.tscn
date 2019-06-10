@@ -34,8 +34,13 @@ position = Vector2( 732.72, -60.3288 )
 [node name="Moita3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 817.109, -12.8605 )
 
+<<<<<<< Updated upstream
 [node name="Enemy_Ray" parent="." instance=ExtResource( 7 )]
 position = Vector2( 920.126, 219.177 )
+=======
+[node name="Pos2" parent="Node2D" index="3"]
+editor/display_folded = true
+>>>>>>> Stashed changes
 
 [node name="Node2D" parent="." instance=ExtResource( 8 )]
 

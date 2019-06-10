@@ -9,6 +9,7 @@ onready var animal = get_node("../Animal")
 
 onready var Pos1 = get_node("../Pos1")
 onready var Pos2 = get_node("../Pos2")
+onready var Pos3 = get_node("../Pos3")
 var aux
 
 var target
@@ -18,7 +19,15 @@ var is_chasing = false
 var animal_is_on_sight = false
 var player_is_on_sight = false
 
+<<<<<<< Updated upstream
 var aux_target = null
+=======
+var state =0 #-1 - parado 0 - patrulhando  1 - animal 2 - player 3 - coco
+var distraction= false
+
+
+onready var Fase = get_node("../../../Fase")
+>>>>>>> Stashed changes
 # Declare member variables here. Examples:
 
 # Called when the node enters the scene tree for the first time.
@@ -69,8 +78,60 @@ func _physics_process(delta):
 		move_and_collide(vec_to_pos2 * delta *100)
 		
 		
+<<<<<<< Updated upstream
 		
 		pass
+=======
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			state = 1
+			distraction = false
+		elif !player.moita and player_is_on_sight and aim(player):
+			state = 2
+			distraction = false
+		elif distraction:
+			state = 3
+		else:
+			state = 0
+		pass
+	#seguindo path
+	elif state == 0:
+		chasing(aux,delta)
+		if animal_is_on_sight:
+			state = -1
+		if player_is_on_sight:
+			state = -1
+		
+		pass
+	#seguindo animal
+	elif state == 1:
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			chasing(animal,delta)
+			distraction = false
+		else:
+			state = -1
+		pass
+	#seguindo player
+	elif state == 2:
+		if !player.moita and player_is_on_sight and aim(player):
+			chasing(player,delta)
+			distraction = false
+		else:
+			state = -1
+		pass
+	#seguindo pos
+	elif state == 3:
+		chasing(Pos3,delta)
+		
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			state = 1
+		elif !player.moita and player_is_on_sight and aim(player):
+			state = 2
+		elif !distraction:
+			state = 0
+		pass
+	
+	
+>>>>>>> Stashed changes
 
 func aim():
 	var space_state = get_world_2d().direct_space_state
@@ -95,14 +156,23 @@ func aim():
 func _on_Visibility_body_entered(body):
 	if body.name=="Player":
 		player_is_on_sight = true
+		Pos3.global_position = Pos1.global_position
+		distraction = false
 	if body.name=="Animal":
 		animal_is_on_sight = true
+<<<<<<< Updated upstream
 	if body.name=="Player" or body.name == "Animal":
 		print_debug("ENTROOO")
 		if target:
 			return
 		target = body
 		$Sprite.self_modulate.r = 1.0
+=======
+		Pos3.global_position = Pos1.global_position
+		distraction = false
+		
+
+>>>>>>> Stashed changes
 
 func _on_Visibility_body_exited(body):
 	if aux_target:
@@ -110,8 +180,13 @@ func _on_Visibility_body_exited(body):
 			aux_target = null
 	if body.name=="Player":
 		player_is_on_sight = false
+		if !animal_is_on_sight:
+			Pos3.global_position = body.global_position
+			distraction = true
+		
 	if body.name=="Animal":
 		animal_is_on_sight = false
+<<<<<<< Updated upstream
 		
 	if body == target:
 		if body.name == "Player" and animal_is_on_sight:
@@ -126,6 +201,12 @@ func _on_Visibility_body_exited(body):
 			is_chasing = false
 			#PERDEU O ALVO
 			$Sprite.self_modulate.r = 0.2
+=======
+		if !player_is_on_sight:
+			Pos3.global_position = body.global_position
+			distraction = true
+	
+>>>>>>> Stashed changes
 
 func _on_Area2D_body_entered(body):
 	if body.name=="Player" or body.name == "Animal":
@@ -142,6 +223,16 @@ func _on_Pos2_body_entered(body):
 	aux = Pos1
 	pass # Replace with function body.
 
+<<<<<<< Updated upstream
 func distracao(posicao):
 	var distraction = Position2D.new()
 	
+=======
+
+func _on_Pos3_body_entered(body):
+	if body.name == "Hunter":
+		aux = Pos2
+		Pos3.global_position = Pos1.global_position
+		distraction = false
+	pass # Replace with function body.
+>>>>>>> Stashed changes
