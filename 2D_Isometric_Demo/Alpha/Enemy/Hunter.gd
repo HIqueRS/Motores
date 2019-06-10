@@ -18,6 +18,8 @@ var is_chasing = false
 var animal_is_on_sight = false
 var player_is_on_sight = false
 
+var state =0 #-1 - parado 0 - patrulhando  1 - animal 2 - player 3 - coco
+
 
 onready var Fase = get_node("../../../Fase")
 # Declare member variables here. Examples:
@@ -35,44 +37,72 @@ func _ready():
 func _physics_process(delta):
 	update()
 	
-	if target:
-		if !target.moita:
-			aim()
-	if is_chasing and target:
-		if !target.moita:
-			var vec_to_payer = target.global_position- global_position
-			vec_to_payer = vec_to_payer.normalized()
-			move_and_collide(vec_to_payer * delta *100)
-		else:
-			is_chasing = false
-	else:
-		#parent.set_offset(parent.get_offset() + mov_speed * delta)
-		rotation = (aux.global_position - global_position).angle()
-		var vec_to_pos2 = aux.global_position- global_position
-		vec_to_pos2 = vec_to_pos2.normalized()
-		move_and_collide(vec_to_pos2 * delta *100)
+	#padrão
+	if state == -1:
 		
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			state = 1
+		elif !player.moita and player_is_on_sight and aim(player):
+			state = 2
+		else:
+			state = 0
+		pass
+	#seguindo path
+	elif state == 0:
+		path(delta)
+		if animal_is_on_sight:
+			state = -1
+		if player_is_on_sight:
+			state = -1
 		
 		pass
+	#seguindo animal
+	elif state == 1:
+		if !animal.moita and animal_is_on_sight and aim(animal):
+			chasing(animal,delta)
+		else:
+			state = -1
+		pass
+	#seguindo player
+	elif state == 2:
+		if !player.moita and player_is_on_sight and aim(player):
+			chasing(player,delta)
+		else:
+			state = -1
+		pass
+	#seguindo pos
+	elif state == 3:
+		pass
+	
+	
 
-func aim():
+func path(delta):
+	rotation = (aux.global_position - global_position).angle()
+	var vec_to_pos2 = aux.global_position- global_position
+	vec_to_pos2 = vec_to_pos2.normalized()
+	move_and_collide(vec_to_pos2 * delta *100)
+	pass
+
+func aim(var aux_target):
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(position, target.global_position, [self], collision_mask) #posicao inicial do raio #até o position global do alvo #ignorando ele mesmo #colidindo com a mask dele
+	var result = space_state.intersect_ray(position, aux_target.global_position, [self], collision_mask) #posicao inicial do raio #até o position global do alvo #ignorando ele mesmo #colidindo com a mask dele
 	if result:
 		hit_pos = result.position
-		if result.collider.name == "Player" or result.collider.name == "Animal":
-			$Sprite.self_modulate.r = 1.0
-			rotation = (target.global_position - global_position).angle()
-			if !is_chasing:
-				is_chasing = true
-				#move_and_slide(player.position-global_position)
+		if result.collider.name == aux_target.name:
+				$Sprite.self_modulate.r = 1.0
+				if !animal.moita:
+					return true
+	return false
 
 
-#func _draw():
-	#draw_circle(Vector2(), detect_radius, vis_color)
-	#if target:
-#		draw_circle((hit_pos - position).rotated(-rotation),5, laser_color)
-#		draw_line(Vector2(), (hit_pos- position).rotated(-rotation), laser_color)
+
+func chasing(var aux_target,delta):
+	
+	rotation = (aux_target.global_position - global_position).angle()
+	var vec_to_payer = aux_target.global_position- global_position
+	vec_to_payer = vec_to_payer.normalized()
+	move_and_collide(vec_to_payer * delta *100)
+	pass
 
 
 func _on_Visibility_body_entered(body):
@@ -81,12 +111,7 @@ func _on_Visibility_body_entered(body):
 		player_is_on_sight = true
 	if body.name=="Animal":
 		animal_is_on_sight = true
-	if body.name=="Player" or body.name == "Animal":
-		print_debug("ENTROOO")
-		if target:
-			return
-		target = body
-		$Sprite.self_modulate.r = 1.0
+
 
 func _on_Visibility_body_exited(body):
 	if body.name=="Player":
@@ -94,16 +119,6 @@ func _on_Visibility_body_exited(body):
 	if body.name=="Animal":
 		animal_is_on_sight = false
 	
-	if body == target:
-		if body.name == "Player" and animal_is_on_sight:
-			target = animal
-		elif body.name == "Animal" and player_is_on_sight:
-			target = player
-		else:
-			print_debug("SAIUUUUUU")
-			target = null
-			is_chasing = false
-			$Sprite.self_modulate.r = 0.2
 
 func _on_Area2D_body_entered(body):
 	if body.name=="Player" or body.name == "Animal":
