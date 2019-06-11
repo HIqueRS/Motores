@@ -63,5 +63,9 @@ func stop():
 
 func _on_Animal_Area_entered(body):
 	if body.name == "Player":
-		free = true
+		if !free:
+			body.WildShapeOnca = true
+			body.WildShapeTatu = true
+			free = true
+		
 	pass # Replace with function body.

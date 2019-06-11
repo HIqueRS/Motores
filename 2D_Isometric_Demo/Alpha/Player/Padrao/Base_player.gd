@@ -11,6 +11,10 @@ var OncaT = true #se pode transformar
 var TatuT = true
 var AnhangaT = true #se tá na forma humanoide
 
+var WildShapeOnca = true
+var WildShapeTatu = true
+
+
 var moita = false
 
 onready var animal = get_node("../Animal")#acho que ele tem q se chamar animal
@@ -53,10 +57,14 @@ func Movement():
 	pass
 
 func Transformations():
-	
+	if get_child(0).name == "Onca":
+		if get_child(0).go_back:
+			Back_to_normal()
+		
 	if Input.is_action_just_pressed("oncaT"): #aperta pra transformar
-		if (OncaT): #se pode virar ele vira
+		if (OncaT and WildShapeOnca): #se pode virar ele vira
 			Polymorph_onca()
+			WildShapeOnca = false
 			pass
 		elif (!AnhangaT): #se não pode e ele não é humano ele vai virar humano
 			Back_to_normal()
@@ -64,8 +72,9 @@ func Transformations():
 		pass
 	
 	if Input.is_action_just_pressed("tatuT"): #aperta pra transformar
-		if (TatuT): #se pode virar ele vira
+		if (TatuT  and WildShapeTatu): #se pode virar ele vira
 			Polymorph_tatu()
+			WildShapeTatu = false
 			pass
 		elif (!AnhangaT): #se não pode e ele não é humano ele vai virar humano
 			Back_to_normal()
