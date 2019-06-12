@@ -3,8 +3,8 @@
 [ext_resource path="res://Alpha/Fases/Fase.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/MapaThings/Tile/TileMap2.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Alpha/MapaThings/WIN/WIN.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Alpha/MapaThings/WIN/Moita.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Alpha/MapaThings/WIN/Moita.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Alpha/Enemy/teste.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Alpha/Animal/Onça/Onca.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=8]
@@ -19,12 +19,13 @@ tile_data = PoolIntArray( -458723, 1, 0, -458722, 1, 0, -458721, 1, 0, -458720, 
 [node name="WIN" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2004.13, -177.29 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1967.2, -214.102 )
-
-[node name="Moita" parent="." instance=ExtResource( 5 )]
+[node name="Moita" parent="." instance=ExtResource( 4 )]
 visible = false
 position = Vector2( -105.845, -295.487 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+position = Vector2( 1967.2, -214.102 )
 
 [node name="Node2D" parent="." instance=ExtResource( 6 )]
 editor/display_folded = true

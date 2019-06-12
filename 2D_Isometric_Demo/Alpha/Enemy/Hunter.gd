@@ -77,6 +77,7 @@ func _physics_process(delta):
 			state = -1
 		else:
 			path(delta,70)
+			Global.state = 0
 		
 		
 		pass
@@ -84,6 +85,7 @@ func _physics_process(delta):
 	elif state == 1:
 		if !animal.moita and animal_is_on_sight and aim(animal):
 			chasing(animal,delta,100)
+			Global.state = 2
 			distraction = false
 		else:
 			is_chasing_animal = false
@@ -96,6 +98,7 @@ func _physics_process(delta):
 	elif state == 2:
 		if !player.moita and player_is_on_sight and aim(player):
 			chasing(player,delta,100)
+			Global.state = 2
 			distraction = false
 		else:
 			is_chasing_player = false
@@ -105,6 +108,7 @@ func _physics_process(delta):
 	#seguindo pos
 	elif state == 3:
 		chasing(Pos3,delta,160) # pra ver ele bugado descomente aqui
+		Global.state = 1
 		state = -1
 		#distraction = false #e comente aqui
 		if !animal.moita and animal_is_on_sight:
