@@ -25,13 +25,18 @@ func _ready():
 	actual_shape = anhanga.instance()
 	add_child(actual_shape)
 	
-	MOTION_SPEED = get_child(0).MOTION_SPEED
+	MOTION_SPEED = get_child(1).MOTION_SPEED
 	
 	
 	pass
 
 func _physics_process(delta):
 	
+	if moita:
+		get_child(1).get_child(1).get_child(0).visible = true
+	else:
+		get_child(1).get_child(1).get_child(0).visible = false
+		#pass
 	if Input.is_action_just_pressed("action"): #so teset 
 		animal.stop()
 		pass
@@ -57,8 +62,8 @@ func Movement():
 	pass
 
 func Transformations():
-	if get_child(0).name == "Onca":
-		if get_child(0).go_back:
+	if get_child(1).name == "Onca":
+		if get_child(1).go_back:
 			Back_to_normal()
 		
 	if Input.is_action_just_pressed("oncaT"): #aperta pra transformar
@@ -86,16 +91,16 @@ func Transformations():
 func Polymorph_onca():
 	var actual_shape = onca.instance()
 	
-	var pos_x = get_child(0).position.x
-	var pos_y = get_child(0).position.y
+	var pos_x = get_child(1).position.x
+	var pos_y = get_child(1).position.y
 	
-	remove_child(get_child(0))
+	remove_child(get_child(1))
 	
 	add_child(actual_shape)
-	get_child(0).position.x = pos_x
-	get_child(0).position.y = pos_y
+	get_child(1).position.x = pos_x
+	get_child(1).position.y = pos_y
 	
-	MOTION_SPEED = get_child(0).MOTION_SPEED
+	MOTION_SPEED = get_child(1).MOTION_SPEED
 	
 	AnhangaT = false #não é humanoide
 	OncaT = false #não pode mais virar onca
@@ -105,16 +110,16 @@ func Polymorph_onca():
 func Polymorph_tatu():
 	var actual_shape = tatu.instance()
 	
-	var pos_x = get_child(0).position.x
-	var pos_y = get_child(0).position.y
+	var pos_x = get_child(1).position.x
+	var pos_y = get_child(1).position.y
 	
-	remove_child(get_child(0))
+	remove_child(get_child(1))
 	
 	add_child(actual_shape)
-	get_child(0).position.x = pos_x
-	get_child(0).position.y = pos_y
+	get_child(1).position.x = pos_x
+	get_child(1).position.y = pos_y
 	
-	MOTION_SPEED = get_child(0).MOTION_SPEED
+	MOTION_SPEED = get_child(1).MOTION_SPEED
 	
 	AnhangaT = false #não é humanoide
 	TatuT = false #não pode mais virar onca
@@ -124,16 +129,16 @@ func Polymorph_tatu():
 func Back_to_normal():
 	var actual_shape = anhanga.instance()
 	
-	var pos_x = get_child(0).position.x
-	var pos_y = get_child(0).position.y
+	var pos_x = get_child(1).position.x
+	var pos_y = get_child(1).position.y
 	
-	remove_child(get_child(0))
+	remove_child(get_child(1))
 	
 	add_child(actual_shape)
-	get_child(0).position.x = pos_x
-	get_child(0).position.y = pos_y
+	get_child(1).position.x = pos_x
+	get_child(1).position.y = pos_y
 	
-	MOTION_SPEED = get_child(0).MOTION_SPEED
+	MOTION_SPEED = get_child(1).MOTION_SPEED
 	
 	AnhangaT = true #é humanoide
 	TatuT = true

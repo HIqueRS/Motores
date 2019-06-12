@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Alpha/Fases/Fase.gd" type="Script" id=1]
+[ext_resource path="res://Alpha/MapaThings/Tile/TileMap2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Alpha/MapaThings/WIN/WIN.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alpha/Player/Padrao/PlayerBase.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Alpha/MapaThings/WIN/Moita.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Alpha/Enemy/teste.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=7]
+
+[node name="Fase" type="Node2D"]
+position = Vector2( -36.1763, -13.5661 )
+script = ExtResource( 1 )
+
+[node name="TileMap2" parent="." instance=ExtResource( 2 )]
+
+[node name="WIN" parent="." instance=ExtResource( 3 )]
+position = Vector2( 464.047, 724.206 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 495.178, 511.779 )
+
+[node name="Moita" parent="." instance=ExtResource( 5 )]
+position = Vector2( 733.226, 98.3621 )
+
+[node name="Node2D" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 275.617, 91.7735 )
+
+[node name="Animal" parent="." instance=ExtResource( 7 )]
+position = Vector2( 679.229, -217.64 )
+
+
+[editable path="Node2D"]

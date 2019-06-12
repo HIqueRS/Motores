@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Alpha/Player/Transf - Tatu/TransfTatu.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/Player/Transf - Tatu/armadillo-46029_960_720.png" type="Texture" id=2]
+[ext_resource path="res://Alpha/MapaThings/Hide.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -16,4 +17,12 @@ texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+
+[node name="Sprite" type="Sprite" parent="Camera2D"]
+visible = false
+texture = ExtResource( 3 )
 

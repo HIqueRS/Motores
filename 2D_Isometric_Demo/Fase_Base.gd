@@ -5,12 +5,16 @@ var NFase = 0
 onready var Fase1 = preload("res://Alpha/Fases/FaseTeste.tscn")
 var FaseAtual
 
-var Fases = [preload("res://Alpha/Enemy/FaseTesteIA.tscn"),
-			 preload("res://Alpha/Fases/FasePedro1.tscn"),
-			 preload("res://Alpha/Fases/FasePedro2.tscn"),
-			 preload("res://Alpha/Fases/FasePedro5.tscn"),
-			 preload("res://Alpha/Fases/FasePedro4.tscn"),
-			 preload("res://Alpha/Fases/FasePedro6.tscn")]
+var Fases = [preload("res://Alpha/Fases new/Fase01.tscn"),
+			 preload("res://Alpha/Fases new/Fase02.tscn"),
+			 preload("res://Alpha/Fases new/Fase03.tscn"),
+			 preload("res://Alpha/Fases new/Fase04.tscn"),
+			 preload("res://Alpha/Fases new/Fase05.tscn"),
+			 preload("res://Alpha/Fases new/Fase06.tscn"),
+			 preload("res://Alpha/Fases new/Fase07.tscn"),
+			 preload("res://Alpha/Fases new/Fase08.tscn"),
+			 preload("res://Alpha/Fases new/Fase09.tscn"),
+			 preload("res://Alpha/Fases new/Fase10.tscn")]
 
 var intervalo = false
 
