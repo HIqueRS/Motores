@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Alpha/Enemy/Hunter.gd" type="Script" id=1]
-[ext_resource path="res://Alpha/Enemy/inimigo.png" type="Texture" id=2]
+[ext_resource path="res://Alpha/Enemy/teste inimigo.png" type="Texture" id=2]
+[ext_resource path="res://Alpha/Enemy/luzlanterna.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 25.0901
@@ -21,8 +22,17 @@ script = ExtResource( 1 )
 detect_radius = 250
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -2.92609, 22.4331 )
+position = Vector2( 23.4005, 4.45844 )
+rotation = 1.5708
+scale = Vector2( 0.306439, 0.306439 )
 texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Sprite"]
+modulate = Color( 1, 1, 1, 0.435294 )
+position = Vector2( 21.0855, -495.362 )
+rotation = -1.5708
+scale = Vector2( 2.62146, 2.62146 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.0433979, -0.955162 )
