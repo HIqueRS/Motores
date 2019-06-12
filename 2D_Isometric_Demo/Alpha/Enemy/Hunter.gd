@@ -178,6 +178,7 @@ func _on_Visibility_body_exited(body):
 func _on_Area2D_body_entered(body):
 	if body.name=="Player" or body.name == "Animal":
 		print_debug("RESETOOOOOOUUU")
+		Global.reset = true
 		#get_tree().reload_current_scene()
 		
 		#Fase.get_script().restart()

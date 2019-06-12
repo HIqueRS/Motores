@@ -40,11 +40,21 @@ func _ready():
 	pass
 
 func _process(delta):
-	
+	if Input.is_action_just_pressed("R"):
+		Global.reset=true
+		
+	if Global.reset:
+		Restar_Level()
+		Global.reset = false
+		
+		
+		
+		
 	next = get_child(0).next
 	restart = get_child(0).restart
 	
 	if restart:
+		
 		pass
 	
 	if next:
@@ -78,3 +88,9 @@ func pass_stage():
 	add_child(FaseAtual)
 	
 	pass
+	
+	
+func Restar_Level():
+	FaseAtual = Fases[NFase].instance()
+	remove_child(get_child(0))
+	add_child(FaseAtual)

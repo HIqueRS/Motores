@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 #onready var MOTION_SPEED = 160 # Pixels/second
 var MOTION_SPEED
-
+var MOTION_SPEED_ON_MOITA
+var MOTION_SPEED_OFF_MOITA
 onready var anhanga = preload("res://Alpha/Player/Padrao/Anhanga.tscn")
 onready var onca = preload("res://Alpha/Player/Transf - Onça/TransfOnca.tscn")
 onready var tatu = preload("res://Alpha/Player/Transf - Tatu/TransfTatu.tscn")
@@ -26,6 +27,8 @@ func _ready():
 	add_child(actual_shape)
 	
 	MOTION_SPEED = get_child(1).MOTION_SPEED
+	MOTION_SPEED_OFF_MOITA = MOTION_SPEED
+	MOTION_SPEED_ON_MOITA = MOTION_SPEED/2
 	
 	
 	pass
@@ -34,8 +37,10 @@ func _physics_process(delta):
 	
 	if moita:
 		get_child(1).get_child(1).get_child(0).visible = true
+		MOTION_SPEED = MOTION_SPEED_ON_MOITA
 	else:
 		get_child(1).get_child(1).get_child(0).visible = false
+		MOTION_SPEED = get_child(1).MOTION_SPEED
 		#pass
 	if Input.is_action_just_pressed("action"): #so teset 
 		animal.stop()
@@ -44,8 +49,8 @@ func _physics_process(delta):
 	Transformations()
 
 func Movement():
-	if Input.is_action_just_pressed("R"):
-		get_tree().reload_current_scene()
+	#if Input.is_action_just_pressed("R"):
+	#	get_tree().reload_current_scene()
 	var motion = Vector2()
 	
 	if Input.is_action_pressed("move_up"):

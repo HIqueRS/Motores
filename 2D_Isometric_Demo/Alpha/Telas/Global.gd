@@ -8,6 +8,9 @@ var save_data = 0
 
 var Cont = false
 
+
+var reset = false
+
 func _ready():
 	#savegame.file_delete()
 	if not savegame.file_exists(save_path):
