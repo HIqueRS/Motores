@@ -41,7 +41,20 @@ func _physics_process(delta):
 	else:
 		get_child(1).get_child(1).get_child(0).visible = false
 		MOTION_SPEED = get_child(1).MOTION_SPEED
-		#pass
+	
+	if WildShapeOnca:
+		get_child(1).get_child(1).get_child(1).visible = true
+		pass
+	else:
+		get_child(1).get_child(1).get_child(1).visible = false
+		pass
+	if WildShapeTatu:
+		get_child(1).get_child(1).get_child(2).visible = true
+		pass
+	else:
+		get_child(1).get_child(1).get_child(2).visible = false
+		pass
+	
 	if Input.is_action_just_pressed("action"): #so teset 
 		animal.stop()
 		pass

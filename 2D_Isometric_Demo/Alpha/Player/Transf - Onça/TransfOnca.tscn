@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Alpha/Player/Transf - Onça/TransfOnca.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/Player/Transf - Onça/animal.png" type="Texture" id=2]
-[ext_resource path="res://Alpha/MapaThings/Hide.png" type="Texture" id=3]
+[ext_resource path="res://Alpha/Player/camera.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 40.7058
@@ -16,16 +16,8 @@ script = ExtResource( 1 )
 position = Vector2( -2.94306, 24.7102 )
 texture = ExtResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-drag_margin_left = 0.0
-drag_margin_top = 0.0
-drag_margin_right = 0.0
-drag_margin_bottom = 0.0
-
-[node name="Sprite" type="Sprite" parent="Camera2D"]
-visible = false
-texture = ExtResource( 3 )
+[node name="Camera2D" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
@@ -33,3 +25,5 @@ one_shot = true
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="Camera2D"]
