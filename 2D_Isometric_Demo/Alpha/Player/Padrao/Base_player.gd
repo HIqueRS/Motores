@@ -28,7 +28,7 @@ func _ready():
 	
 	MOTION_SPEED = get_child(1).MOTION_SPEED
 	MOTION_SPEED_OFF_MOITA = MOTION_SPEED
-	MOTION_SPEED_ON_MOITA = MOTION_SPEED/2
+	MOTION_SPEED_ON_MOITA = MOTION_SPEED - 50
 	
 	
 	pass
@@ -41,7 +41,35 @@ func _physics_process(delta):
 	else:
 		get_child(1).get_child(1).get_child(0).visible = false
 		MOTION_SPEED = get_child(1).MOTION_SPEED
-		#pass
+	
+	if WildShapeOnca:
+		get_child(1).get_child(1).get_child(1).visible = true
+		pass
+	else:
+		get_child(1).get_child(1).get_child(1).visible = false
+		pass
+	if WildShapeTatu:
+		get_child(1).get_child(1).get_child(2).visible = true
+		pass
+	else:
+		get_child(1).get_child(1).get_child(2).visible = false
+		pass
+	
+	if Global.state == 0:
+		get_child(1).get_child(1).get_child(3).visible = true
+		get_child(1).get_child(1).get_child(4).visible = false
+		get_child(1).get_child(1).get_child(5).visible = false
+		pass
+	elif Global.state == 1:
+		get_child(1).get_child(1).get_child(3).visible = false
+		get_child(1).get_child(1).get_child(4).visible = true
+		get_child(1).get_child(1).get_child(5).visible = false
+		pass
+	else:
+		get_child(1).get_child(1).get_child(3).visible = false
+		get_child(1).get_child(1).get_child(4).visible = false
+		get_child(1).get_child(1).get_child(5).visible = true
+	
 	if Input.is_action_just_pressed("action"): #so teset 
 		animal.stop()
 		pass

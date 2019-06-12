@@ -11,6 +11,8 @@ var Cont = false
 
 var reset = false
 
+var state = 0
+
 func _ready():
 	#savegame.file_delete()
 	if not savegame.file_exists(save_path):
