@@ -4,8 +4,9 @@
 [ext_resource path="res://Alpha/Animal/Onça/onça2.png" type="Texture" id=2]
 [ext_resource path="res://Alpha/Player/camera.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 40.7058
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 17.2224
+height = 81.2573
 
 [node name="Onca" type="CollisionShape2D"]
 position = Vector2( 0, 1.07545 )
@@ -13,8 +14,8 @@ shape = SubResource( 1 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 10.0747, 0.999352 )
-scale = Vector2( 0.328047, 0.328047 )
+position = Vector2( 3.77221, 1.6296 )
+scale = Vector2( 0.17895, 0.17895 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D2" parent="." instance=ExtResource( 3 )]

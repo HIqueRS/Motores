@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Alpha/Fases/Fase.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/MapaThings/Tile/TileMap2.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Alpha/Animal/Onça/Onca.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Alpha/Enemy/teste.tscn" type="PackedScene" id=8]
+[ext_resource path="res://music.tscn" type="PackedScene" id=9]
 
 [node name="Fase" type="Node2D"]
 position = Vector2( -36.1763, -13.5661 )
@@ -192,6 +193,10 @@ position = Vector2( -17.7146, -310.032 )
 editor/display_folded = true
 position = Vector2( -450.524, -101.08 )
 
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 9 )]
+volume_db = -31.458
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 
 [editable path="Node2D"]
 

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/snd_heartbeat_medium.wav-a358e173f198878323a851b118c31d2e.sample"
+
+[deps]
+
+source_file="res://drive-download-20190612T230827Z-001/snd_heartbeat_medium.wav"
+dest_files=[ "res://.import/snd_heartbeat_medium.wav-a358e173f198878323a851b118c31d2e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
