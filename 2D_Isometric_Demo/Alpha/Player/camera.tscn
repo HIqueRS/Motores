@@ -16,31 +16,37 @@ drag_margin_bottom = 0.0
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false
+z_index = 1
 texture = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 visible = false
 position = Vector2( -408.374, 276.896 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 3
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 visible = false
 position = Vector2( -333.542, 278.946 )
 scale = Vector2( 0.5, 0.5 )
+z_index = 3
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="."]
 position = Vector2( 420.39, -318.394 )
+z_index = 3
 texture = ExtResource( 4 )
 
 [node name="Sprite5" type="Sprite" parent="."]
 visible = false
 position = Vector2( 420.39, -318.394 )
+z_index = 3
 texture = ExtResource( 5 )
 
 [node name="Sprite6" type="Sprite" parent="."]
 visible = false
 position = Vector2( 420.39, -318.394 )
+z_index = 3
 texture = ExtResource( 6 )
 

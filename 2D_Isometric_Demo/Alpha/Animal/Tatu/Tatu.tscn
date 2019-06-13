@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Alpha/Animal/Animal.gd" type="Script" id=1]
-[ext_resource path="res://Alpha/Player/Transf - Tatu/armadillo-46029_960_720.png" type="Texture" id=2]
+[ext_resource path="res://drive-download-20190612T182540Z-001/tatu transformacao.png" type="Texture" id=2]
 [ext_resource path="res://Alpha/Animal/Tatu/Tatu.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -14,10 +14,14 @@ radius = 14.2118
 collision_layer = 6
 collision_mask = 7
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Tatu" type="Sprite" parent="."]
-position = Vector2( 1.98255, 1.33814 )
-scale = Vector2( 0.0728976, 0.0891697 )
+position = Vector2( -5.50755, -3.50481 )
+rotation = 3.14159
+scale = Vector2( 0.12, 0.12 )
 texture = ExtResource( 2 )
 flip_h = true
 script = ExtResource( 3 )
