@@ -16,4 +16,5 @@ position = Vector2( 0.354752, -0.44842 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
+rotating = true
 
