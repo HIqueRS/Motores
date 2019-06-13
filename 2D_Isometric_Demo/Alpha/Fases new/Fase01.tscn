@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Alpha/Fases/Fase.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/MapaThings/Tile/TileMap2.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Alpha/Enemy/teste.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://drive-download-20190612T230553Z-001/msc_suspense.wav" type="AudioStream" id=8]
+[ext_resource path="res://drive-download-20190612T182540Z-001/testefase1.png" type="Texture" id=9]
 
 [node name="Fase" type="Node2D"]
 position = Vector2( -36.1763, -13.5661 )
@@ -35,6 +36,11 @@ position = Vector2( 679.229, -217.64 )
 stream = ExtResource( 8 )
 volume_db = -33.22
 autoplay = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 618.287, 189.746 )
+scale = Vector2( 1.84012, 1.83403 )
+texture = ExtResource( 9 )
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 
