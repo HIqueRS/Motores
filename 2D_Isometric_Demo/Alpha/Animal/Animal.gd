@@ -8,6 +8,8 @@ onready var player = get_node("../Player")
 var free = false
 var parado = false
 
+var play_sound = false
+
 var ok = true
 var dist
 
@@ -28,6 +30,11 @@ func follow(delt):
 	
 	if player == null:
 		return
+	
+	if play_sound:
+		play_sound = false
+		$"AudioStreamPlayer".play()
+		pass
 	
 	var vec_to_player = player.global_position - global_position
 	vec_to_player = vec_to_player.normalized()
@@ -67,5 +74,6 @@ func _on_Animal_Area_entered(body):
 			body.WildShapeOnca = true
 			body.WildShapeTatu = true
 			free = true
+			play_sound = true
 		
 	pass # Replace with function body.

@@ -12,6 +12,8 @@ var OncaT = true #se pode transformar
 var TatuT = true
 var AnhangaT = true #se tá na forma humanoide
 
+var teste = true
+
 var WildShapeOnca = true
 var WildShapeTatu = true
 
@@ -83,12 +85,34 @@ func Movement():
 	
 	if Input.is_action_pressed("move_up"):
 		motion += Vector2(0, -1)
+		get_child(1).global_rotation = deg2rad(0)
+		get_child(1).get_child(1).global_rotation = 0
+		
 	if Input.is_action_pressed("move_bottom"):
 		motion += Vector2(0, 1)
+		get_child(1).global_rotation = deg2rad(180)
+		get_child(1).get_child(1).global_rotation = 0
+			
 	if Input.is_action_pressed("move_left"):
 		motion += Vector2(-1, 0)
+		get_child(1).global_rotation = deg2rad(-90)
+		get_child(1).get_child(1).global_rotation = 0
 	if Input.is_action_pressed("move_right"):
 		motion += Vector2(1, 0)
+		get_child(1).global_rotation = deg2rad(90)
+		get_child(1).get_child(1).global_rotation = 0
+	if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_right"):
+		get_child(1).global_rotation = deg2rad(45)
+		get_child(1).get_child(1).global_rotation = 0
+	if Input.is_action_pressed("move_up") and Input.is_action_pressed("move_left"):
+		get_child(1).global_rotation = deg2rad(-45)
+		get_child(1).get_child(1).global_rotation = 0
+	if Input.is_action_pressed("move_bottom") and Input.is_action_pressed("move_right"):
+		get_child(1).global_rotation = deg2rad(135)
+		get_child(1).get_child(1).global_rotation = 0
+	if Input.is_action_pressed("move_bottom") and Input.is_action_pressed("move_left"):
+		get_child(1).global_rotation = deg2rad(-135)
+		get_child(1).get_child(1).global_rotation = 0
 	motion = motion.normalized() * MOTION_SPEED
 
 	move_and_slide(motion)

@@ -44,6 +44,24 @@ func _physics_process(delta):
 	
 	print(state)
 	
+	if Global.state == 0:
+		if  !$"Heart01".playing:
+			$"Heart01".play()
+			$"Heart02".stop()
+			$"Heart03".stop()
+		pass
+	elif Global.state == 1:
+		if  !$"Heart02".playing:
+			$"Heart01".stop()
+			$"Heart02".play()
+			$"Heart03".stop()
+		pass
+	elif Global.state == 2:
+		if  !$"Heart03".playing:
+			$"Heart01".stop()
+			$"Heart02".stop()
+			$"Heart03".play()
+		pass
 	#padrão
 	if state == -1:
 		
