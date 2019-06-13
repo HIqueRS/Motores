@@ -7,11 +7,7 @@
 [ext_resource path="res://Alpha/MapaThings/WIN/Moita.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Alpha/Enemy/teste.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Alpha/Animal/Tatu/Tatu.tscn" type="PackedScene" id=7]
-<<<<<<< HEAD
-[ext_resource path="res://drive-download-20190612T182540Z-001/testefase1.png" type="Texture" id=8]
-=======
 [ext_resource path="res://drive-download-20190612T230553Z-001/msc_suspense.wav" type="AudioStream" id=8]
->>>>>>> cd382cd0bcdb6bbdee22f88e5d07e6e51b3977d7
 
 [node name="Fase" type="Node2D"]
 position = Vector2( -36.1763, -13.5661 )
@@ -35,19 +31,11 @@ position = Vector2( 275.617, 91.7735 )
 [node name="Animal" parent="." instance=ExtResource( 7 )]
 position = Vector2( 679.229, -217.64 )
 
-<<<<<<< HEAD
-[node name="testefase1" type="Sprite" parent="."]
-position = Vector2( 617.813, 185.733 )
-scale = Vector2( 1.81588, 1.84917 )
-texture = ExtResource( 8 )
-
-=======
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 volume_db = -33.22
 autoplay = true
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
->>>>>>> cd382cd0bcdb6bbdee22f88e5d07e6e51b3977d7
 
 [editable path="Node2D"]

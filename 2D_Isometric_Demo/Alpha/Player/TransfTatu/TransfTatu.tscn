@@ -1,18 +1,23 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Alpha/Player/Transf - Tatu/TransfTatu.gd" type="Script" id=1]
-[ext_resource path="res://Alpha/Player/Transf - Tatu/armadillo-46029_960_720.png" type="Texture" id=2]
+[ext_resource path="res://Alpha/Player/TransfTatu/TransfTatu.gd" type="Script" id=1]
+[ext_resource path="res://drive-download-20190612T182540Z-001/tatu transformacao.png" type="Texture" id=2]
 [ext_resource path="res://Alpha/Player/camera.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="TransfTatu" type="CollisionShape2D"]
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 2.61817, -1.2502 )
-scale = Vector2( 0.0559235, 0.0559235 )
+position = Vector2( -2.92814, 1.11713 )
+scale = Vector2( 0.0559235, 0.0645473 )
 texture = ExtResource( 2 )
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
