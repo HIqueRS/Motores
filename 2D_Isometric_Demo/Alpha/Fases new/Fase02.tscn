@@ -21,7 +21,6 @@ tile_data = PoolIntArray( -458746, 1, 0, -458745, 1, 0, -458744, 1, 0, -458743, 
 position = Vector2( 464.047, 724.206 )
 
 [node name="Moita" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 733.226, 98.3621 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]

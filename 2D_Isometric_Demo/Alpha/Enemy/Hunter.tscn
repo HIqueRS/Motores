@@ -8,7 +8,7 @@
 [ext_resource path="res://drive-download-20190612T230827Z-001/snd_heartbeat_fast.wav" type="AudioStream" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 25.0901
+radius = 36.7823
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 60.4338
@@ -16,7 +16,7 @@ radius = 60.4338
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 31.4282
+radius = 42.8383
 
 [node name="Hunter" type="KinematicBody2D"]
 collision_layer = 4

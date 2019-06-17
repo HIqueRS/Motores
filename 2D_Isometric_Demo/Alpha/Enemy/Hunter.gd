@@ -1,6 +1,6 @@
 extends KinematicBody2D
 export (int) var detect_radius
-export (int) var mov_speed = 250
+export (int) var mov_speed = 300
 var vis_color = Color(1.0, 1.0, 1.0, 0.1)
 var laser_color = Color(1.0, .329, .298)
 
@@ -102,7 +102,7 @@ func _physics_process(delta):
 	#seguindo animal
 	elif state == 1:
 		if !animal.moita and animal_is_on_sight and aim(animal):
-			chasing(animal,delta,100)
+			chasing(animal,delta,150)
 			Global.state = 2
 			distraction = false
 		else:
@@ -115,7 +115,7 @@ func _physics_process(delta):
 	#seguindo player
 	elif state == 2:
 		if !player.moita and player_is_on_sight and aim(player):
-			chasing(player,delta,100)
+			chasing(player,delta,150)
 			Global.state = 2
 			distraction = false
 		else:

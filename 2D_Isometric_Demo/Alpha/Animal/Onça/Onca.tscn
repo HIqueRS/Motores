@@ -39,6 +39,7 @@ position = Vector2( -0.836227, 7.89156 )
 rotation = 1.57365
 scale = Vector2( 0.603864, 0.603864 )
 shape = SubResource( 2 )
+disabled = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
