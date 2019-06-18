@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Alpha/Player/Transf - Onça/TransfOnca.gd" type="Script" id=1]
 [ext_resource path="res://Alpha/Animal/Onça/onça2.png" type="Texture" id=2]
 [ext_resource path="res://Alpha/Player/camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Alpha/Player/Transf - Onça/animal2.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 34.6238
@@ -10,7 +11,6 @@ height = 71.4175
 
 [node name="Onca" type="CollisionShape2D"]
 position = Vector2( 0, 1.07545 )
-rotation = 1.5708
 shape = SubResource( 1 )
 script = ExtResource( 1 )
 
@@ -25,5 +25,27 @@ texture = ExtResource( 2 )
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="timebar" type="Node2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="TextureProgress" type="TextureProgress" parent="timebar"]
+visible = false
+margin_left = 43.3773
+margin_top = -67.4686
+margin_right = 75.3773
+margin_bottom = -35.4686
+rect_scale = Vector2( 4, 4 )
+rect_clip_content = true
+size_flags_stretch_ratio = 0.0
+max_value = 5.0
+value = 5.0
+rounded = true
+texture_under = ExtResource( 4 )
+texture_progress = ExtResource( 4 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+nine_patch_stretch = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

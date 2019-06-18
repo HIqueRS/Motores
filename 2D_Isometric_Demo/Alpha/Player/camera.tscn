@@ -48,3 +48,16 @@ position = Vector2( 420.39, -318.394 )
 z_index = 3
 texture = ExtResource( 6 )
 
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -41.0694
+margin_top = 39.5119
+margin_right = 2733.93
+margin_bottom = 2814.51
+rect_scale = Vector2( 0.03, 0.03 )
+max_value = 5.0
+value = 5.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 2 )
+fill_mode = 5
+tint_under = Color( 0, 0, 0, 1 )
+

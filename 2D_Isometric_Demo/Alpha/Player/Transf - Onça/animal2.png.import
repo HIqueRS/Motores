@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/animal2.png-9308085a96a70610efdec1fbaa83c3cf.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Alpha/MapaThings/Tile/tile.bmp"
+source_file="res://Alpha/Player/Transf - Onça/animal2.png"
+dest_files=[ "res://.import/animal2.png-9308085a96a70610efdec1fbaa83c3cf.stex" ]
+
 [params]
 
 compress/mode=0
