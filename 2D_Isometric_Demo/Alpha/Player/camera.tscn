@@ -49,6 +49,7 @@ z_index = 3
 texture = ExtResource( 6 )
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
 margin_left = -41.0694
 margin_top = 39.5119
 margin_right = 2733.93

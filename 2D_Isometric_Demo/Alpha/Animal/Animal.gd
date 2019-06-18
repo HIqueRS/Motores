@@ -54,7 +54,7 @@ func distance():
 	if dist.y < 0:
 		dist.y = dist.y * -1
 	
-	if dist.x <100 && dist.y <100:
+	if dist.x <50 && dist.y <50:
 		ok = false
 	else:
 		ok = true
