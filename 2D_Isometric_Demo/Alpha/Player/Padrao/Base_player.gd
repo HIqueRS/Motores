@@ -40,11 +40,11 @@ func _physics_process(delta):
 	if moita:
 		get_child(1).get_child(1).get_child(0).visible = true
 		MOTION_SPEED = MOTION_SPEED_ON_MOITA
-		get_child(1).get_child(0).modulate.a= 0.5
+		get_child(1).get_child(0).modulate.a= 0.3
 	else:
 		get_child(1).get_child(1).get_child(0).visible = false
 		MOTION_SPEED = get_child(1).MOTION_SPEED
-		get_child(1).get_child(0).modulate.a= 1
+		get_child(1).get_child(0).modulate.a= 0.5
 	
 	if WildShapeOnca:
 		get_child(1).get_child(1).get_child(1).visible = true

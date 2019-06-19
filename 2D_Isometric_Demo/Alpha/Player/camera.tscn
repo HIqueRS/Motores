@@ -22,13 +22,13 @@ texture = ExtResource( 1 )
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( -453.19, 326.034 )
 scale = Vector2( 0.0430478, 0.0418066 )
-z_index = 3
+z_index = 5
 texture = ExtResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( -337.724, 329.377 )
 scale = Vector2( 0.144804, 0.156924 )
-z_index = 3
+z_index = 5
 texture = ExtResource( 3 )
 
 [node name="Sprite4" type="Sprite" parent="."]
@@ -61,4 +61,18 @@ texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 2 )
 fill_mode = 5
 tint_under = Color( 0, 0, 0, 1 )
+
+[node name="Sprite8" type="Sprite" parent="."]
+modulate = Color( 0.25098, 0.25098, 0.25098, 1 )
+position = Vector2( -337.724, 329.377 )
+scale = Vector2( 0.144804, 0.156924 )
+z_index = 4
+texture = ExtResource( 3 )
+
+[node name="Sprite7" type="Sprite" parent="."]
+modulate = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
+position = Vector2( -453.19, 326.034 )
+scale = Vector2( 0.0430478, 0.0418066 )
+z_index = 4
+texture = ExtResource( 2 )
 
