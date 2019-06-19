@@ -23,7 +23,7 @@ var moita = false
 onready var animal = get_node("../Animal")#acho que ele tem q se chamar animal
 
 func _ready():
-
+	
 	var actual_shape
 	actual_shape = anhanga.instance()
 	add_child(actual_shape)
@@ -40,9 +40,11 @@ func _physics_process(delta):
 	if moita:
 		get_child(1).get_child(1).get_child(0).visible = true
 		MOTION_SPEED = MOTION_SPEED_ON_MOITA
+		get_child(1).get_child(0).modulate.a= 0.5
 	else:
 		get_child(1).get_child(1).get_child(0).visible = false
 		MOTION_SPEED = get_child(1).MOTION_SPEED
+		get_child(1).get_child(0).modulate.a= 1
 	
 	if WildShapeOnca:
 		get_child(1).get_child(1).get_child(1).visible = true
