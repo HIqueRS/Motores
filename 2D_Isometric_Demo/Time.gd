@@ -27,7 +27,7 @@ func _process(delta):
 	if u_min > 9:
 		u_min = 0
 		d_min +=1
-	$Time.set_text(str(d_min)+str(u_min)+":"+str(d_sec)+str(u_sec)+":"+str(ms))
+	#$Time.set_text(str(d_min)+str(u_min)+":"+str(d_sec)+str(u_sec)+":"+str(ms))
 	Global.timestring = str(d_min)+str(u_min)+":"+str(d_sec)+str(u_sec)+":"+str(ms)
 
 func _on_Timer_timeout():
