@@ -13,6 +13,8 @@ var reset = false
 
 var state = 0
 
+var timestring
+
 func _ready():
 	#savegame.file_delete()
 	if not savegame.file_exists(save_path):

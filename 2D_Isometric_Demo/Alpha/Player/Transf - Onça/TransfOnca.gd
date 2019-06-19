@@ -10,7 +10,8 @@ func _ready():
 func _process(delta):
 	$Camera2D2/TextureProgress.visible = true;
 	$Camera2D2/TextureProgress.value = $Timer.get_time_left() 
-	
+	if $Timer.get_time_left() <= 0:
+		$Camera2D2/TextureProgress.visible = false;
 	#$timebar.ADD_PROPERTYNZ(PropertyInfo(Variant::BOOL, "is_toplevel", PROPERTY_HINT_NONE, "", PROPERTY_USAGE_EDITOR), "set_as_toplevel", "is_set_as_toplevel")
 
 	pass
