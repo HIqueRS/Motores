@@ -19,6 +19,7 @@ rotation = -0.0026954
 shape = SubResource( 1 )
 
 [node name="Pos3" type="Position2D" parent="."]
+editor/display_folded = true
 
 [node name="Pos3" type="Area2D" parent="Pos3"]
 
@@ -26,6 +27,7 @@ shape = SubResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Pos2" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 312.943, 2.57214 )
 
 [node name="Pos2" type="Area2D" parent="Pos2"]
