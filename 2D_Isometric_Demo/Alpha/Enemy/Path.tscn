@@ -11,8 +11,12 @@ radius = 1.58535
 
 [node name="Follow" type="KinematicBody2D" parent="."]
 position = Vector2( 0, -0.92659 )
+collision_layer = 513
+collision_mask = 513
 script = ExtResource( 1 )
+loop = true
 velocity = 120
+reverse = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Follow"]
 shape = SubResource( 1 )
@@ -24,78 +28,37 @@ editor/display_folded = true
 position = Vector2( 158.737, 39.7002 )
 
 [node name="Area2D" type="Area2D" parent="Positions/Position2D"]
+editor/display_folded = true
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D/Area2D"]
 shape = SubResource( 2 )
 
 [node name="Position2D2" type="Position2D" parent="Positions"]
 editor/display_folded = true
-position = Vector2( 244.91, 8.19618 )
+position = Vector2( 338.317, 287.138 )
 
 [node name="Area2D" type="Area2D" parent="Positions/Position2D2"]
+editor/display_folded = true
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D2/Area2D"]
 shape = SubResource( 2 )
 
 [node name="Position2D3" type="Position2D" parent="Positions"]
 editor/display_folded = true
-position = Vector2( 326.449, 62.8649 )
+position = Vector2( 459.095, 111.815 )
 
 [node name="Area2D" type="Area2D" parent="Positions/Position2D3"]
+collision_layer = 512
+collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D3/Area2D"]
 shape = SubResource( 2 )
-
-[node name="Position2D4" type="Position2D" parent="Positions"]
-editor/display_folded = true
-position = Vector2( 366.155, -31.6731 )
-
-[node name="Area2D" type="Area2D" parent="Positions/Position2D4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D4/Area2D"]
-shape = SubResource( 2 )
-
-[node name="Position2D5" type="Position2D" parent="Positions"]
-editor/display_folded = true
-position = Vector2( 225.23, 88.4375 )
-
-[node name="Area2D" type="Area2D" parent="Positions/Position2D5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D5/Area2D"]
-shape = SubResource( 2 )
-
-[node name="Position2D6" type="Position2D" parent="Positions"]
-editor/display_folded = true
-position = Vector2( 358.063, 137.146 )
-
-[node name="Area2D" type="Area2D" parent="Positions/Position2D6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D6/Area2D"]
-shape = SubResource( 2 )
-
-[node name="Position2D7" type="Position2D" parent="Positions"]
-editor/display_folded = true
-position = Vector2( 237.873, 155.239 )
-
-[node name="Area2D" type="Area2D" parent="Positions/Position2D7"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D7/Area2D"]
-shape = SubResource( 2 )
-
-[node name="Position2D8" type="Position2D" parent="Positions"]
-editor/display_folded = true
-position = Vector2( 410.551, 228.628 )
-
-[node name="Area2D" type="Area2D" parent="Positions/Position2D8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D8/Area2D"]
-shape = SubResource( 2 )
+disabled = true
 
 [connection signal="body_entered" from="Positions/Position2D/Area2D" to="Follow" method="_on_Pos_body_entered"]
 [connection signal="body_entered" from="Positions/Position2D2/Area2D" to="Follow" method="_on_Pos_body_entered"]
 [connection signal="body_entered" from="Positions/Position2D3/Area2D" to="Follow" method="_on_Pos_body_entered"]
-[connection signal="body_entered" from="Positions/Position2D4/Area2D" to="Follow" method="_on_Pos_body_entered"]
-[connection signal="body_entered" from="Positions/Position2D5/Area2D" to="Follow" method="_on_Pos_body_entered"]
-[connection signal="body_entered" from="Positions/Position2D6/Area2D" to="Follow" method="_on_Pos_body_entered"]
-[connection signal="body_entered" from="Positions/Position2D7/Area2D" to="Follow" method="_on_Pos_body_entered"]
-[connection signal="body_entered" from="Positions/Position2D8/Area2D" to="Follow" method="_on_Pos_body_entered"]
