@@ -66,15 +66,15 @@ shape = SubResource( 4 )
 
 [node name="Heart01" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -35.051
-
-[node name="Heart02" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -35.186
+volume_db = -20.0
 
 [node name="Heart03" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -20.0
+
+[node name="Heart02" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = -34.305
+volume_db = -20.0
 
 [connection signal="body_entered" from="Visibility" to="." method="_on_Visibility_body_entered"]
 [connection signal="body_exited" from="Visibility" to="." method="_on_Visibility_body_exited"]

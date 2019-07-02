@@ -13,7 +13,7 @@ var Fases = [preload("res://Alpha/Fases new/Fase01.tscn"),
 			 preload("res://Alpha/Fases new/Fase06.tscn"),
 			 preload("res://Alpha/Fases new/Fase07.tscn"),
 			 preload("res://Alpha/Fases new/Fase08.tscn"),
-			 preload("res://fim.tscn")]
+			 preload("res://Alpha/Fases new/Fase00.tscn")]
 
 var intervalo = false
 

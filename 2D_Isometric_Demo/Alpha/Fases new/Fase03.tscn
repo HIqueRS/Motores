@@ -40,11 +40,9 @@ editor/display_folded = true
 position = Vector2( -22.8588, -103.544 )
 
 [node name="Pos3" parent="Node2D" index="2"]
-editor/display_folded = true
 position = Vector2( -22.8588, -103.544 )
 
 [node name="Pos2" parent="Node2D" index="3"]
-editor/display_folded = true
 position = Vector2( -28.6215, 345.145 )
 
 [node name="Animal" parent="." instance=ExtResource( 7 )]
@@ -68,11 +66,9 @@ editor/display_folded = true
 position = Vector2( 779.112, -14.8714 )
 
 [node name="Pos3" parent="Node2D2" index="2"]
-editor/display_folded = true
 position = Vector2( 779.112, -14.8714 )
 
 [node name="Pos2" parent="Node2D2" index="3"]
-editor/display_folded = true
 position = Vector2( 329.4, -14.04 )
 
 [node name="Node2D3" parent="." instance=ExtResource( 6 )]
@@ -87,11 +83,9 @@ editor/display_folded = true
 position = Vector2( -17.7146, -310.032 )
 
 [node name="Pos3" parent="Node2D3" index="2"]
-editor/display_folded = true
 position = Vector2( -17.7146, -310.032 )
 
 [node name="Pos2" parent="Node2D3" index="3"]
-editor/display_folded = true
 position = Vector2( 6.31241, 40.4418 )
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource( 9 )]
