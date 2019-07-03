@@ -42,6 +42,7 @@ autoplay = true
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 618.287, 189.746 )
 scale = Vector2( 1.84012, 1.83403 )
+z_index = 2
 texture = ExtResource( 9 )
 
 [node name="Sprite2" parent="." instance=ExtResource( 10 )]

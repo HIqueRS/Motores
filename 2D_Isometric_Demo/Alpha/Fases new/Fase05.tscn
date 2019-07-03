@@ -119,6 +119,7 @@ volume_db = -20.0
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 2056.55, -988.555 )
 scale = Vector2( 3.929, 4.06417 )
+z_index = 2
 texture = ExtResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="Sprite"]
