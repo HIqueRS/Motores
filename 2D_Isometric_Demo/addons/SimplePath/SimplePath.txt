@@ -1,0 +1,7 @@
+[plugin]
+
+name = "Simple path"
+description = "A simple way to make rigdybody2d follow points"
+author = "Henrique"
+version = "0.0.1"
+scrypt = "plugin.gd"

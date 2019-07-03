@@ -30,7 +30,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "CustomFollow2DPlugin" )
+enabled=PoolStringArray( "CustomFollow2DPlugin", "simple path" )
 
 [gdnative]
 

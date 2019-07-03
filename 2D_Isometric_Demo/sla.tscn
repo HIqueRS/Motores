@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/SimplePath/Follow.gd" type="Script" id=1]
+[ext_resource path="res://Alpha/Enemy/inimigo.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 1.94277
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Follow" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+collision_layer = 513
+collision_mask = 513
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+loop = true
+velocity = 99
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Follow"]
+shape = SubResource( 2 )
+
+[node name="Simple path" type="KinematicBody2D" parent="Follow"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+
+[node name="Positions" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 100.102, 39.5275 )
+
+[node name="Position2D" type="Position2D" parent="Positions"]
+editor/display_folded = true
+
+[node name="Area2D" type="Area2D" parent="Positions/Position2D"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D/Area2D"]
+position = Vector2( 0.110184, 0.147758 )
+shape = SubResource( 3 )
+
+[node name="Position2D2" type="Position2D" parent="Positions"]
+editor/display_folded = true
+position = Vector2( 41.038, -6.62497 )
+
+[node name="Area2D" type="Area2D" parent="Positions/Position2D2"]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Positions/Position2D2/Area2D"]
+position = Vector2( 0.110184, 0.147758 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Positions/Position2D/Area2D" to="Follow" method="_on_Pos_body_entered"]
+[connection signal="body_entered" from="Positions/Position2D2/Area2D" to="Follow" method="_on_Pos_body_entered"]
