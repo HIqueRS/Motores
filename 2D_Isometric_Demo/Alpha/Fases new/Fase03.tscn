@@ -97,6 +97,10 @@ scale = Vector2( 2.71527, 2.68039 )
 texture = ExtResource( 10 )
 
 [node name="Sprite2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 714.093, -214.035 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2175.16, -180.678 )
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 
